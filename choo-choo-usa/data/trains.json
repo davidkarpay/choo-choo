@@ -1,0 +1,110 @@
+[
+  {
+    "id": "big-thunder",
+    "name": "Big Thunder",
+    "type": "steam",
+    "color": {
+      "primary": "#C45B3E",
+      "secondary": "#1A1A2E",
+      "accent": "#F4C542"
+    },
+    "personality": "Big Thunder is the pride of the roundhouse. He is the biggest and strongest engine, and he knows it -- but he is kind about it. He pulls the heaviest loads without complaint and always makes sure the smaller engines know they are valued too. His whistle is so deep you can feel it in your chest.",
+    "whistleType": "deep",
+    "whistleSoundFile": "/audio/whistles/deep-steam-01.mp3",
+    "cargoCapability": ["coal", "steel", "lumber"],
+    "maxCars": 80,
+    "speedMph": 25,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 0
+  },
+  {
+    "id": "daisy-belle",
+    "name": "Daisy Belle",
+    "type": "steam",
+    "color": {
+      "primary": "#5B98B5",
+      "secondary": "#FDF6E3",
+      "accent": "#E8913A"
+    },
+    "personality": "Daisy Belle loves people. She is always on time because she knows her passengers are counting on her. She keeps her cars spotless and her dining car serves the best tomato soup on the rails. Her whistle sounds like she is singing.",
+    "whistleType": "high",
+    "whistleSoundFile": "/audio/whistles/high-steam-01.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 12,
+    "speedMph": 55,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 1
+  },
+  {
+    "id": "iron-mike",
+    "name": "Iron Mike",
+    "type": "diesel",
+    "color": {
+      "primary": "#2D5A3D",
+      "secondary": "#1A1A2E",
+      "accent": "#D64045"
+    },
+    "personality": "Iron Mike is small but fierce. He is a helper engine -- when the big trains need to climb a mountain pass, Iron Mike couples onto the back and pushes with everything he has got. He is loud and proud and a little bit scrappy. The other engines tease him about his size, but they all know they could not make it over the mountains without him.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-01.mp3",
+    "cargoCapability": ["coal", "grain", "steel", "fuel", "automobiles", "lumber", "packages"],
+    "maxCars": 20,
+    "speedMph": 15,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 2
+  },
+  {
+    "id": "starlight-express",
+    "name": "Starlight Express",
+    "type": "steam",
+    "color": {
+      "primary": "#1B3A5C",
+      "secondary": "#8C8C8C",
+      "accent": "#F4C542"
+    },
+    "personality": "Starlight Express works while the world sleeps. She glides through the night like a whisper, her headlamp a single bright eye in the darkness. She carries fresh food across the country so that when families sit down to breakfast, there are oranges from California and milk from Wisconsin. She is quiet and graceful, and she loves the stars.",
+    "whistleType": "mellow",
+    "whistleSoundFile": "/audio/whistles/mellow-steam-01.mp3",
+    "cargoCapability": ["produce", "livestock", "packages"],
+    "maxCars": 40,
+    "speedMph": 35,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 3
+  },
+  {
+    "id": "old-faithful",
+    "name": "Old Faithful",
+    "type": "steam",
+    "color": {
+      "primary": "#D4A843",
+      "secondary": "#8C8C8C",
+      "accent": "#3E2F1C"
+    },
+    "personality": "Old Faithful has been running the Kansas City to Denver line for fifty years. Her paint is faded and her whistle is scratchy, but she has never missed a single run. Not once. The other engines look up to her like a grandmother. She knows every curve and crossing on her route by heart, and she hums to herself as she rolls through the wheat fields.",
+    "whistleType": "scratchy",
+    "whistleSoundFile": "/audio/whistles/scratchy-steam-01.mp3",
+    "cargoCapability": ["grain"],
+    "maxCars": 60,
+    "speedMph": 20,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 4
+  },
+  {
+    "id": "copper-king",
+    "name": "Copper King",
+    "type": "steam",
+    "color": {
+      "primary": "#E8913A",
+      "secondary": "#1A1A2E",
+      "accent": "#8C8C8C"
+    },
+    "personality": "Copper King is the longest train in the fleet. When he pulls out of the yard, it takes a full two minutes for his last car to clear the switch. He carries fuel in silver tanker cars and brand-new automobiles on open flatcars. He is serious and methodical -- he does not blow his whistle unless he absolutely has to. But when he does, people listen.",
+    "whistleType": "sharp",
+    "whistleSoundFile": "/audio/whistles/sharp-steam-01.mp3",
+    "cargoCapability": ["fuel", "chemicals", "automobiles"],
+    "maxCars": 100,
+    "speedMph": 22,
+    "homeRoundhouseId": "main-roundhouse",
+    "berthIndex": 5
+  }
+]

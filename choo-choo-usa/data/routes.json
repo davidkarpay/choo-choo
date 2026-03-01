@@ -1,0 +1,190 @@
+[
+  {
+    "id": "appalachian-coal",
+    "name": "Appalachian Coal Line",
+    "description": "Deep in the hills of West Virginia, the mines send their coal rolling toward the power plants of Ohio. Big Thunder knows every tunnel and trestle on this ancient route. The tracks twist through narrow valleys where the morning fog hangs thick and the mountains rise up on both sides like green walls.",
+    "stationIds": ["charleston-wv", "huntington-wv", "portsmouth-oh", "columbus-oh", "toledo-oh"],
+    "lengthMiles": 380,
+    "primaryCargoTypes": ["coal", "steel"],
+    "color": "#2E2E38",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-81.6326, 38.3498],
+        [-82.4452, 38.4137],
+        [-82.9977, 38.7318],
+        [-82.9988, 40.7989],
+        [-83.5379, 41.6528]
+      ]
+    }
+  },
+  {
+    "id": "northeast-corridor",
+    "name": "Northeast Corridor",
+    "description": "The busiest passenger route in all the land stretches from Boston to Washington. Daisy Belle flies along these tracks at top speed, carrying businessfolk and families and students between the great cities of the East Coast. The scenery changes from harbor towns to rolling farmland to gleaming skyscrapers.",
+    "stationIds": ["boston-ma", "new-haven-ct", "new-york-ny", "philadelphia-pa", "baltimore-md", "washington-dc"],
+    "lengthMiles": 457,
+    "primaryCargoTypes": ["passengers", "packages"],
+    "color": "#5B98B5",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-71.0589, 42.3601],
+        [-72.9279, 41.3082],
+        [-73.9857, 40.7484],
+        [-75.1652, 39.9526],
+        [-76.6122, 39.2904],
+        [-77.0369, 38.9072]
+      ]
+    }
+  },
+  {
+    "id": "grain-belt",
+    "name": "Grain Belt Express",
+    "description": "From the endless golden wheat fields of Kansas, Old Faithful carries the harvest south to the Gulf Coast ports. The land is so flat you can see for miles in every direction -- nothing but wheat and sky and the two silver rails stretching to the horizon.",
+    "stationIds": ["kansas-city-mo", "wichita-ks", "oklahoma-city-ok", "dallas-tx", "houston-tx"],
+    "lengthMiles": 850,
+    "primaryCargoTypes": ["grain", "produce", "livestock"],
+    "color": "#D4A843",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-94.5786, 39.0997],
+        [-97.3301, 37.6872],
+        [-97.5164, 35.4676],
+        [-96.7970, 32.7767],
+        [-95.3698, 29.7604]
+      ]
+    }
+  },
+  {
+    "id": "transcon",
+    "name": "Transcontinental Main",
+    "description": "The great Transcontinental -- Chicago to Los Angeles. This is the longest and busiest freight corridor in the country. Copper King hauls his mile-long train across the plains, over the Rockies, through the desert, and into the golden sunshine of California. It takes three full days.",
+    "stationIds": ["chicago-il", "kansas-city-mo", "denver-co", "albuquerque-nm", "flagstaff-az", "los-angeles-ca"],
+    "lengthMiles": 2200,
+    "primaryCargoTypes": ["fuel", "automobiles", "packages", "chemicals"],
+    "color": "#E8913A",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-94.5786, 39.0997],
+        [-104.9903, 39.7392],
+        [-106.6504, 35.0844],
+        [-111.6513, 35.1983],
+        [-118.2437, 34.0522]
+      ]
+    }
+  },
+  {
+    "id": "california-produce",
+    "name": "California Produce Run",
+    "description": "Starlight Express races through the night along this route, carrying refrigerated cars packed with California's famous oranges, strawberries, lettuce, and almonds. By morning, fresh produce arrives at kitchens across the West.",
+    "stationIds": ["sacramento-ca", "fresno-ca", "bakersfield-ca", "los-angeles-ca"],
+    "lengthMiles": 400,
+    "primaryCargoTypes": ["produce"],
+    "color": "#2D5A3D",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-121.4944, 38.5816],
+        [-119.7871, 36.7378],
+        [-119.0187, 35.3733],
+        [-118.2437, 34.0522]
+      ]
+    }
+  },
+  {
+    "id": "chicago-hub-east",
+    "name": "Chicago Eastern Gateway",
+    "description": "Chicago is the great crossroads -- more rail lines meet here than anywhere else in America. This eastern route connects the Chicago hub to the industrial cities of the Great Lakes and on to New York.",
+    "stationIds": ["chicago-il", "gary-in", "cleveland-oh", "pittsburgh-pa", "new-york-ny"],
+    "lengthMiles": 790,
+    "primaryCargoTypes": ["steel", "automobiles", "packages"],
+    "color": "#8C8C8C",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-87.3465, 41.5934],
+        [-81.6944, 41.4993],
+        [-79.9959, 40.4406],
+        [-73.9857, 40.7484]
+      ]
+    }
+  },
+  {
+    "id": "mountain-pass",
+    "name": "Rocky Mountain Pass",
+    "description": "The steepest, toughest stretch of track in the whole country. When the big engines hit this grade, they slow to a crawl and call for Iron Mike. He couples onto the back and pushes with all his might, his wheels grinding and his horn blasting. Together, they make it over the top.",
+    "stationIds": ["denver-co", "summit-co", "glenwood-springs-co"],
+    "lengthMiles": 160,
+    "primaryCargoTypes": ["coal", "fuel", "packages"],
+    "color": "#D64045",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-104.9903, 39.7392],
+        [-106.1500, 39.6333],
+        [-107.3248, 39.5506]
+      ]
+    }
+  },
+  {
+    "id": "sunset-route",
+    "name": "Sunset Route",
+    "description": "From the refineries of Texas to the ports of New Orleans, the Sunset Route carries fuel and chemicals through the bayous and along the Gulf Coast. The air smells like salt and pine, and the sunsets paint the sky in impossible colors.",
+    "stationIds": ["houston-tx", "beaumont-tx", "lake-charles-la", "baton-rouge-la", "new-orleans-la"],
+    "lengthMiles": 365,
+    "primaryCargoTypes": ["fuel", "chemicals"],
+    "color": "#C45B3E",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-95.3698, 29.7604],
+        [-94.1266, 30.0802],
+        [-93.2174, 30.2266],
+        [-91.1871, 30.4515],
+        [-90.0715, 29.9511]
+      ]
+    }
+  },
+  {
+    "id": "florida-corridor",
+    "name": "Florida Sunshine Line",
+    "description": "Fresh strawberries, tomatoes, and oranges ride north from the warm groves of Florida. And passengers ride south, chasing the sunshine. This corridor connects the Southeast to the tropical tip of America.",
+    "stationIds": ["jacksonville-fl", "orlando-fl", "tampa-fl", "west-palm-beach-fl", "miami-fl"],
+    "lengthMiles": 450,
+    "primaryCargoTypes": ["produce", "passengers"],
+    "color": "#F4C542",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-81.6557, 30.3322],
+        [-81.3789, 28.5383],
+        [-82.4572, 27.9506],
+        [-80.0534, 26.7153],
+        [-80.1918, 25.7617]
+      ]
+    }
+  },
+  {
+    "id": "pacific-lumber",
+    "name": "Pacific Lumber Line",
+    "description": "Through the towering forests of Oregon and Washington, trains carry fresh-cut lumber south. The air is cool and damp, and the tracks wind through valleys so green they glow. The lumber smells like pine and rain.",
+    "stationIds": ["seattle-wa", "portland-or", "eugene-or", "sacramento-ca"],
+    "lengthMiles": 750,
+    "primaryCargoTypes": ["lumber"],
+    "color": "#3E2F1C",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-122.3321, 47.6062],
+        [-122.6765, 45.5152],
+        [-123.0868, 44.0521],
+        [-121.4944, 38.5816]
+      ]
+    }
+  }
+]

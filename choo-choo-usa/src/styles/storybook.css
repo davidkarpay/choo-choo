@@ -1,0 +1,225 @@
+/* Storybook-styled UI components */
+
+.panel {
+  background-color: var(--cream-parchment);
+  border: 3px solid var(--ink-black);
+  border-radius: 8px;
+  box-shadow: var(--shadow-panel);
+  padding: 20px;
+  position: relative;
+}
+
+.panel__header {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink-black);
+  text-shadow: var(--shadow-title);
+  margin-bottom: 12px;
+}
+
+.panel__body {
+  font-family: var(--font-narrative);
+  color: #3E2F1C;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.panel__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: var(--min-touch-target);
+  height: var(--min-touch-target);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 1.25rem;
+  color: var(--ink-black);
+  transition: transform 0.2s var(--ease-default);
+}
+
+.panel__close:hover {
+  transform: scale(1.2);
+}
+
+.btn {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border: 2px solid var(--ink-black);
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: var(--min-touch-target);
+  min-height: var(--min-touch-target);
+  transition: transform 0.15s var(--ease-default), filter 0.15s var(--ease-default);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn--primary {
+  background-color: var(--warm-brick);
+  color: var(--cream-parchment);
+}
+
+.btn--secondary {
+  background-color: var(--sunrise-gold);
+  color: var(--ink-black);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--ink-black);
+  border-color: var(--rail-silver);
+}
+
+/* Narrator text overlay */
+.narrator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  width: calc(100% - 48px);
+  z-index: 50;
+}
+
+.narrator__text {
+  font-family: var(--font-narrative);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #3E2F1C;
+  background-color: var(--cream-parchment);
+  border: 2px solid var(--ink-black);
+  border-radius: 8px;
+  padding: 16px 24px;
+  box-shadow: var(--shadow-panel);
+  text-align: center;
+}
+
+/* Top bar / HUD */
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.top-bar > * {
+  pointer-events: auto;
+}
+
+.top-bar__clock {
+  font-family: var(--font-data);
+  font-size: 1.1rem;
+  color: var(--cream-parchment);
+  background: rgba(26, 26, 46, 0.7);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 2px solid var(--rail-silver);
+}
+
+.top-bar__controls {
+  display: flex;
+  gap: 4px;
+}
+
+.speed-btn {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  background: rgba(26, 26, 46, 0.7);
+  color: var(--cream-parchment);
+  border: 2px solid var(--rail-silver);
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: var(--min-touch-target);
+  min-height: 36px;
+  transition: all 0.15s var(--ease-default);
+}
+
+.speed-btn:hover {
+  background: rgba(26, 26, 46, 0.9);
+}
+
+.speed-btn--active {
+  background: var(--sunrise-gold);
+  color: var(--ink-black);
+  border-color: var(--ink-black);
+}
+
+.speed-btn--active:hover {
+  background: var(--sunrise-gold);
+}
+
+/* Train detail panel (sidebar) */
+.train-detail {
+  position: absolute;
+  right: 16px;
+  top: 72px;
+  width: 320px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  z-index: 55;
+}
+
+.train-detail__color-bar {
+  height: 8px;
+  border-radius: 4px 4px 0 0;
+  margin: -20px -20px 12px;
+}
+
+.train-detail__name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.train-detail__personality {
+  font-family: var(--font-narrative);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #3E2F1C;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.train-detail__stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.train-detail__stat-label {
+  color: var(--rail-silver);
+}
+
+.train-detail__stat-value {
+  font-family: var(--font-data);
+  color: var(--ink-black);
+}

@@ -1,0 +1,228 @@
+[
+  {
+    "id": "chicago-il",
+    "name": "Union Station",
+    "city": "Chicago",
+    "state": "Illinois",
+    "position": [41.8781, -87.6298],
+    "size": "major_hub",
+    "trackCount": 24,
+    "architectureStyle": "grand",
+    "description": "The beating heart of American railroads. More tracks cross through Chicago than any other city. Union Station's great hall has marble columns so tall they seem to hold up the sky itself. If you stand here long enough, you will see a train going to every corner of the country.",
+    "industries": [
+      { "type": "distribution", "name": "Chicago Distribution Center", "produces": [], "consumes": ["packages", "produce", "grain"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "food_processing", "name": "Midwest Food Co.", "produces": ["packages"], "consumes": ["grain", "livestock"], "productionRate": 0.3, "minBatch": 5, "maxBatch": 15 }
+    ]
+  },
+  {
+    "id": "new-york-ny",
+    "name": "Grand Central Terminal",
+    "city": "New York",
+    "state": "New York",
+    "position": [40.7484, -73.9857],
+    "size": "major_hub",
+    "trackCount": 44,
+    "architectureStyle": "grand",
+    "description": "The grandest station in all the land, with a ceiling painted like the night sky -- stars and constellations glowing blue and gold above the bustling crowds. Thousands of people pass through here every day, arriving from everywhere and going to everywhere else.",
+    "industries": [
+      { "type": "distribution", "name": "East Coast Distribution Hub", "produces": [], "consumes": ["packages", "produce", "automobiles", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "los-angeles-ca",
+    "name": "Union Station",
+    "city": "Los Angeles",
+    "state": "California",
+    "position": [34.0522, -118.2437],
+    "size": "major_hub",
+    "trackCount": 16,
+    "architectureStyle": "grand",
+    "description": "Where the trains meet the Pacific Ocean. Los Angeles Union Station has red-tile roofs and cool courtyards with palm trees. Freight trains arrive here carrying goods from all across the country, and container ships in the nearby port carry them across the sea.",
+    "industries": [
+      { "type": "distribution", "name": "West Coast Import/Export", "produces": ["packages"], "consumes": ["packages", "automobiles", "fuel"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 30 }
+    ]
+  },
+  {
+    "id": "kansas-city-mo",
+    "name": "Kansas City Union Station",
+    "city": "Kansas City",
+    "state": "Missouri",
+    "position": [39.0997, -94.5786],
+    "size": "major_hub",
+    "trackCount": 12,
+    "architectureStyle": "grand",
+    "description": "Right in the middle of America, Kansas City is where the grain trains meet the freight trains. The station sits on a bluff overlooking the Missouri River, and from the platform you can see trains stretching all the way to the horizon.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Great Plains Grain Elevator", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 50, "maxBatch": 200 }
+    ]
+  },
+  {
+    "id": "denver-co",
+    "name": "Denver Union Station",
+    "city": "Denver",
+    "state": "Colorado",
+    "position": [39.7392, -104.9903],
+    "size": "major_hub",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "The Mile High City -- where the plains end and the mountains begin. Denver is the last flat stop before the trains start climbing into the Rockies. This is where Iron Mike joins the big engines to help them over the passes.",
+    "industries": [
+      { "type": "distribution", "name": "Rocky Mountain Distribution", "produces": [], "consumes": ["packages", "produce", "lumber"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "houston-tx",
+    "name": "Houston Grand Station",
+    "city": "Houston",
+    "state": "Texas",
+    "position": [29.7604, -95.3698],
+    "size": "major_hub",
+    "trackCount": 10,
+    "architectureStyle": "grand",
+    "description": "Houston is fuel country. The biggest refineries in America line the ship channel here, and tank cars full of fuel roll out by the hundreds every day. The air is warm and heavy, and the station buzzes with energy.",
+    "industries": [
+      { "type": "oil_refining", "name": "Gulf Coast Refinery", "produces": ["fuel", "chemicals"], "consumes": [], "productionRate": 0.6, "minBatch": 20, "maxBatch": 80 },
+      { "type": "livestock", "name": "Texas Cattle Exchange", "produces": ["livestock"], "consumes": [], "productionRate": 0.3, "minBatch": 30, "maxBatch": 100 }
+    ]
+  },
+  {
+    "id": "charleston-wv",
+    "name": "Charleston Depot",
+    "city": "Charleston",
+    "state": "West Virginia",
+    "position": [38.3498, -81.6326],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Tucked into a green valley along the Kanawha River, Charleston is coal country. The depot is modest but busy -- hopper cars line up here full of black coal, waiting for Big Thunder to haul them north.",
+    "industries": [
+      { "type": "coal_mining", "name": "Appalachian Coal Co.", "produces": ["coal"], "consumes": [], "productionRate": 0.7, "minBatch": 40, "maxBatch": 150 }
+    ]
+  },
+  {
+    "id": "boston-ma",
+    "name": "South Station",
+    "city": "Boston",
+    "state": "Massachusetts",
+    "position": [42.3601, -71.0589],
+    "size": "major_hub",
+    "trackCount": 13,
+    "architectureStyle": "grand",
+    "description": "The northern anchor of the Northeast Corridor, where brick and cobblestone meet the rails. Students, professors, and lobster fishermen alike crowd the platform as Daisy Belle whistles her approach.",
+    "industries": [
+      { "type": "distribution", "name": "New England Distribution", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "washington-dc",
+    "name": "Union Station",
+    "city": "Washington",
+    "state": "District of Columbia",
+    "position": [38.9072, -77.0369],
+    "size": "major_hub",
+    "trackCount": 20,
+    "architectureStyle": "grand",
+    "description": "The nation's capital station, with soaring arches and gleaming white stone. Senators, diplomats, and school groups on field trips all pass through these grand doors.",
+    "industries": [
+      { "type": "distribution", "name": "Capital Region Distribution", "produces": [], "consumes": ["packages", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "seattle-wa",
+    "name": "King Street Station",
+    "city": "Seattle",
+    "state": "Washington",
+    "position": [47.6062, -122.3321],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Where the great forests of the Pacific Northwest meet the railroad. From the platform you can see the snow-capped peak of Mount Rainier on a clear day. Lumber trains begin their long journey south from here.",
+    "industries": [
+      { "type": "lumber", "name": "Pacific Lumber Mill", "produces": ["lumber"], "consumes": [], "productionRate": 0.4, "minBatch": 20, "maxBatch": 60 }
+    ]
+  },
+  {
+    "id": "sacramento-ca",
+    "name": "Sacramento Valley Station",
+    "city": "Sacramento",
+    "state": "California",
+    "position": [38.5816, -121.4944],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "modest",
+    "description": "The gateway to California's Central Valley -- the most productive farmland in the world. Refrigerated cars line up here, ready to carry oranges, almonds, grapes, and tomatoes across the country.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "Central Valley Farms", "produces": ["produce"], "consumes": [], "productionRate": 0.6, "minBatch": 15, "maxBatch": 50 }
+    ]
+  },
+  {
+    "id": "new-orleans-la",
+    "name": "New Orleans Union Passenger Terminal",
+    "city": "New Orleans",
+    "state": "Louisiana",
+    "position": [29.9511, -90.0715],
+    "size": "regional",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "Where jazz drifts through the station and the Mississippi River rolls nearby. New Orleans is a great port city where rail meets river meets sea. Cargo from all over America passes through here on its way to the world.",
+    "industries": [
+      { "type": "distribution", "name": "Gulf Port Export Terminal", "produces": [], "consumes": ["grain", "fuel", "chemicals", "coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "west-palm-beach-fl",
+    "name": "West Palm Beach Station",
+    "city": "West Palm Beach",
+    "state": "Florida",
+    "position": [26.7153, -80.0534],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "A sunny little station with palm trees swaying and warm breezes blowing. Snowbirds arrive here every winter, and fresh Florida produce heads north every morning.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "Palm Beach Citrus Groves", "produces": ["produce"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 30 }
+    ]
+  },
+  {
+    "id": "columbus-oh",
+    "name": "Columbus Union Station",
+    "city": "Columbus",
+    "state": "Ohio",
+    "position": [40.7989, -82.9988],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "modest",
+    "description": "In the heart of Ohio, Columbus is where the coal trains deliver their cargo to the power plants that keep the Midwest's lights burning bright.",
+    "industries": [
+      { "type": "power_generation", "name": "Ohio Valley Power", "produces": [], "consumes": ["coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ]
+  },
+  {
+    "id": "pittsburgh-pa",
+    "name": "Pittsburgh Union Station",
+    "city": "Pittsburgh",
+    "state": "Pennsylvania",
+    "position": [40.4406, -79.9959],
+    "size": "regional",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "The Steel City! Where three rivers meet and the great steel mills glow orange against the night sky. Iron ore and coal come in, and gleaming steel comes out.",
+    "industries": [
+      { "type": "steel_production", "name": "Pittsburgh Steel Works", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.4, "minBatch": 20, "maxBatch": 60 }
+    ]
+  },
+  {
+    "id": "portland-or",
+    "name": "Portland Union Station",
+    "city": "Portland",
+    "state": "Oregon",
+    "position": [45.5152, -122.6765],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Rain-washed and green, Portland's station has a clock tower you can see from across the river. Lumber trains roll through here, carrying the scent of fresh-cut Douglas fir.",
+    "industries": [
+      { "type": "lumber", "name": "Oregon Forest Products", "produces": ["lumber"], "consumes": [], "productionRate": 0.35, "minBatch": 15, "maxBatch": 45 }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "type": "coal",
+    "category": "minerals",
+    "displayName": "Coal",
+    "unit": "tons",
+    "carType": "Open hopper car",
+    "icon": "coal",
+    "color": "#2E2E38",
+    "description": "Black and dusty, coal rides in open hopper cars from the mines of Appalachia. It powers the furnaces and generators that keep the lights on across America."
+  },
+  {
+    "type": "grain",
+    "category": "agriculture",
+    "displayName": "Grain",
+    "unit": "tons",
+    "carType": "Covered hopper car",
+    "icon": "wheat",
+    "color": "#D4A843",
+    "description": "Golden wheat, yellow corn, and round soybeans travel in covered hoppers from the Great Plains. This grain becomes the bread, cereal, and tortillas on your breakfast table."
+  },
+  {
+    "type": "produce",
+    "category": "agriculture",
+    "displayName": "Fresh Produce",
+    "unit": "tons",
+    "carType": "Refrigerated boxcar",
+    "icon": "apple",
+    "color": "#2D5A3D",
+    "description": "Oranges from California! Strawberries from Florida! Lettuce, tomatoes, and avocados -- all riding in special cold cars called reefers that keep the food fresh and cool, even in summer."
+  },
+  {
+    "type": "livestock",
+    "category": "agriculture",
+    "displayName": "Livestock",
+    "unit": "head",
+    "carType": "Ventilated stock car",
+    "icon": "cow",
+    "color": "#8C6E4A",
+    "description": "Cattle and other animals ride in special cars with open sides so they can breathe fresh air. The cows moo as they travel, watching the countryside go by."
+  },
+  {
+    "type": "automobiles",
+    "category": "manufacturing",
+    "displayName": "Automobiles",
+    "unit": "units",
+    "carType": "Auto rack car",
+    "icon": "car",
+    "color": "#5B98B5",
+    "description": "Brand-new cars and trucks, shiny and bright, stacked three high on open auto rack cars. They come from the factories of Detroit and ride the rails to dealerships all over the country."
+  },
+  {
+    "type": "steel",
+    "category": "manufacturing",
+    "displayName": "Steel",
+    "unit": "tons",
+    "carType": "Flatcar with coils",
+    "icon": "coil",
+    "color": "#8C8C8C",
+    "description": "Heavy rolls and beams of steel, forged in the blast furnaces of Indiana and Pennsylvania. This steel will become bridges, buildings, cars, and a thousand other things."
+  },
+  {
+    "type": "fuel",
+    "category": "energy",
+    "displayName": "Fuel",
+    "unit": "barrels",
+    "carType": "Tank car",
+    "icon": "fuel",
+    "color": "#1A1A2E",
+    "description": "Gasoline, diesel, and heating oil travel in round silver tanker cars. They come from the refineries of Texas and Louisiana, and they keep America moving."
+  },
+  {
+    "type": "chemicals",
+    "category": "energy",
+    "displayName": "Chemicals",
+    "unit": "barrels",
+    "carType": "Pressurized tank car",
+    "icon": "flask",
+    "color": "#7B4F9D",
+    "description": "Special chemicals used in factories and farms travel in sturdy pressurized tank cars. These cars are extra strong and extra safe."
+  },
+  {
+    "type": "lumber",
+    "category": "goods",
+    "displayName": "Lumber",
+    "unit": "board-feet",
+    "carType": "Flatcar",
+    "icon": "tree",
+    "color": "#6B4226",
+    "description": "Long stacks of fresh-cut lumber ride on flatcars, tied down with heavy chains. The wood comes from the great forests of the Pacific Northwest and smells like pine and rain. It will become houses and furniture and playground equipment."
+  },
+  {
+    "type": "packages",
+    "category": "goods",
+    "displayName": "Packages and Mail",
+    "unit": "containers",
+    "carType": "Intermodal container car",
+    "icon": "package",
+    "color": "#C45B3E",
+    "description": "Colorful shipping containers stacked two high, each one packed with packages, letters, books, birthday presents, and everything else people order and send. These containers can go from a ship to a train to a truck without being unpacked."
+  },
+  {
+    "type": "passengers",
+    "category": "people",
+    "displayName": "Passengers",
+    "unit": "people",
+    "carType": "Passenger coach",
+    "icon": "person",
+    "color": "#E8913A",
+    "description": "The most important cargo of all -- people! Grandmothers visiting grandchildren, families going on vacation, students heading to college, business travelers with briefcases. Every passenger has a story."
+  }
+]
