@@ -55,3 +55,17 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
 export function hexToNumber(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);
 }
+
+/** Interpolate between two numeric (PixiJS) hex colors. */
+export function lerpHexNum(a: number, b: number, t: number): number {
+  const ar = (a >> 16) & 0xFF;
+  const ag = (a >> 8) & 0xFF;
+  const ab = a & 0xFF;
+  const br = (b >> 16) & 0xFF;
+  const bg = (b >> 8) & 0xFF;
+  const bb = b & 0xFF;
+  const r = Math.round(ar + (br - ar) * t);
+  const g = Math.round(ag + (bg - ag) * t);
+  const bl = Math.round(ab + (bb - ab) * t);
+  return (r << 16) | (g << 8) | bl;
+}

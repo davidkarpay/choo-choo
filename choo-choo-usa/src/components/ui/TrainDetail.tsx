@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import { Panel } from './Panel';
+import { playUIClick } from '../../utils/sound';
 import type { Train } from '../../types/train';
 
 interface TrainDetailProps {
@@ -21,6 +23,8 @@ function getStatusLabel(status: string, trainType: 'steam' | 'diesel'): string {
 }
 
 export function TrainDetail({ train, onClose }: TrainDetailProps) {
+  const navigate = useNavigate();
+
   if (!train) return null;
 
   return (
@@ -64,6 +68,19 @@ export function TrainDetail({ train, onClose }: TrainDetailProps) {
           <span className="train-detail__stat-value">
             {train.stats.totalMiles.toLocaleString()}
           </span>
+        </div>
+
+        <div style={{ marginTop: 12 }}>
+          <button
+            className="btn btn--primary"
+            onClick={() => {
+              playUIClick();
+              navigate(`/train/${train.id}`);
+            }}
+            style={{ fontSize: '0.8rem', padding: '6px 14px', width: '100%' }}
+          >
+            Look Inside
+          </button>
         </div>
       </Panel>
     </div>

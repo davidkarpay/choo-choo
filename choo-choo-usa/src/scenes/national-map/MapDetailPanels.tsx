@@ -8,6 +8,7 @@
  * Part of: Choo-Choo USA — Phase 2 + Phase 3
  */
 
+import { useNavigate } from 'react-router-dom';
 import { Panel } from '../../components/ui/Panel';
 import { useTrainStore } from '../../stores/useTrainStore';
 import { useStationStore } from '../../stores/useStationStore';
@@ -15,6 +16,7 @@ import { useRouteStore } from '../../stores/useRouteStore';
 import { useCargoStore } from '../../stores/useCargoStore';
 import { usePassengerStore } from '../../stores/usePassengerStore';
 import { availableCars } from '../../engine/cargoCapacity';
+import { playUIClick } from '../../utils/sound';
 
 interface TrainDetailPanelProps {
   trainId: string;
@@ -23,6 +25,7 @@ interface TrainDetailPanelProps {
 }
 
 export function MapTrainDetail({ trainId, onClose, onFollow }: TrainDetailPanelProps) {
+  const navigate = useNavigate();
   const train = useTrainStore((s) => s.getTrainById(trainId));
   const routes = useRouteStore((s) => s.routes);
   const followedId = useTrainStore((s) => s.followedTrainId);
@@ -118,6 +121,16 @@ export function MapTrainDetail({ trainId, onClose, onFollow }: TrainDetailPanelP
               Follow This Train
             </button>
           )}
+          <button
+            className="map-nav-btn"
+            onClick={() => {
+              playUIClick();
+              navigate(`/train/${trainId}`);
+            }}
+            style={{ fontSize: '0.75rem', padding: '4px 10px' }}
+          >
+            Look Inside
+          </button>
         </div>
       </Panel>
     </div>
@@ -130,6 +143,7 @@ interface StationDetailPanelProps {
 }
 
 export function MapStationDetail({ stationId, onClose }: StationDetailPanelProps) {
+  const navigate = useNavigate();
   const station = useStationStore((s) => s.getStationById(stationId));
   const waitingCargo = useCargoStore((s) => s.getWaitingAtStation(stationId));
   const waitingPassengers = usePassengerStore((s) => s.getWaitingAtStation(stationId));
@@ -198,6 +212,19 @@ export function MapStationDetail({ stationId, onClose }: StationDetailPanelProps
             </span>
           </div>
         )}
+
+        <div style={{ marginTop: 12 }}>
+          <button
+            className="map-nav-btn"
+            onClick={() => {
+              playUIClick();
+              navigate(`/station/${stationId}`);
+            }}
+            style={{ fontSize: '0.75rem', padding: '4px 10px' }}
+          >
+            Visit Station
+          </button>
+        </div>
       </Panel>
     </div>
   );

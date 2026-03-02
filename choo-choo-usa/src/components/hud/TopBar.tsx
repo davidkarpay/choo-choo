@@ -7,7 +7,7 @@
  * Part of: Choo-Choo USA
  */
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSimulationStore } from '../../stores/useSimulationStore';
 import { Clock } from '../ui/Clock';
 import type { SimulationSpeed } from '../../types/simulation';
@@ -28,13 +28,34 @@ interface TopBarProps {
 
 export function TopBar({ showMapButton = true }: TopBarProps) {
   const navigate = useNavigate();
+  const location = useLocation();
   const speed = useSimulationStore((s) => s.speed);
   const setSpeed = useSimulationStore((s) => s.setSpeed);
+
+  const isInteriorRoute = location.pathname.startsWith('/station/') || location.pathname.startsWith('/train/');
 
   return (
     <div className="top-bar">
       <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-        {showMapButton && (
+        {isInteriorRoute && (
+          <button
+            className="speed-btn"
+            onClick={() => {
+              playUIClick();
+              navigate('/map');
+            }}
+            style={{
+              background: 'var(--warm-brick)',
+              color: 'var(--cream-parchment)',
+              border: '2px solid var(--ink-black)',
+              borderRadius: 6,
+              fontWeight: 700,
+            }}
+          >
+            Return to Map
+          </button>
+        )}
+        {showMapButton && !isInteriorRoute && (
           <button
             className="speed-btn"
             onClick={() => {

@@ -1,7 +1,8 @@
 /**
- * Audio manager wrapping Howler.js.
- * Phase 1 uses generated placeholder tones since audio files don't exist yet.
- * Provides the AudioContext-based tone generator for whistles, chugging, etc.
+ * Audio manager using Web Audio API.
+ * Generates placeholder tones since audio files don't exist yet.
+ * Provides the AudioContext-based tone generator for whistles, chugging,
+ * ambient loops, and Phase 4 interior/station sounds.
  */
 
 let audioCtx: AudioContext | null = null;
@@ -193,6 +194,169 @@ export function playCelebrationChime(): void {
     osc.start(ctx.currentTime + offset);
     osc.stop(ctx.currentTime + offset + 0.6);
   });
+}
+
+// ===== Phase 4: Interior and Station Ambient Sounds =====
+
+/**
+ * Play a rhythmic rail joint click — the "clickety-clack" heard inside trains.
+ * Pitch and interval vary with speed.
+ */
+export function playWheelClack(speed = 1.0): void {
+  const ctx = getAudioContext();
+  const bufferSize = Math.floor(ctx.sampleRate * 0.04);
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    const t = i / bufferSize;
+    const envelope = Math.exp(-t * 20);
+    // Sharp metallic click
+    const click = Math.sin(i / (ctx.sampleRate / (600 * speed))) * 0.5;
+    const noise = (Math.random() * 2 - 1) * 0.3;
+    data[i] = (click + noise) * envelope * 0.08;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  source.playbackRate.value = 0.8 + speed * 0.4;
+
+  const filter = ctx.createBiquadFilter();
+  filter.type = 'bandpass';
+  filter.frequency.value = 1200 * speed;
+  filter.Q.value = 2;
+
+  const gain = ctx.createGain();
+  gain.gain.value = 0.06;
+
+  source.connect(filter);
+  filter.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
+}
+
+/**
+ * Start a continuous filtered white noise loop simulating wind.
+ * Returns a stop function to cleanly end the loop.
+ */
+export function startWindLoop(): { stop: () => void } {
+  const ctx = getAudioContext();
+  const bufferSize = ctx.sampleRate * 2;
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = (Math.random() * 2 - 1);
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  source.loop = true;
+
+  const filter = ctx.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 400;
+  filter.Q.value = 0.5;
+
+  const gain = ctx.createGain();
+  gain.gain.value = 0.03;
+
+  source.connect(filter);
+  filter.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
+
+  return {
+    stop: () => {
+      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
+      setTimeout(() => { try { source.stop(); } catch { /* already stopped */ } }, 600);
+    },
+  };
+}
+
+/**
+ * Start a low-frequency murmur loop simulating crowd/conversation ambience.
+ * Returns a stop function.
+ */
+export function startMurmurLoop(): { stop: () => void } {
+  const ctx = getAudioContext();
+  const oscillators: OscillatorNode[] = [];
+  const masterGain = ctx.createGain();
+  masterGain.gain.value = 0.02;
+  masterGain.connect(ctx.destination);
+
+  // Several low-frequency sine waves at slightly different frequencies
+  for (let i = 0; i < 4; i++) {
+    const osc = ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = 100 + Math.random() * 80;
+
+    const lfo = ctx.createOscillator();
+    lfo.frequency.value = 0.3 + Math.random() * 0.5;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 20;
+    lfo.connect(lfoGain);
+    lfoGain.connect(osc.frequency);
+    lfo.start();
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0.5;
+
+    osc.connect(gain);
+    gain.connect(masterGain);
+    osc.start();
+    oscillators.push(osc);
+  }
+
+  return {
+    stop: () => {
+      masterGain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
+      setTimeout(() => {
+        for (const osc of oscillators) {
+          try { osc.stop(); } catch { /* already stopped */ }
+        }
+      }, 600);
+    },
+  };
+}
+
+/** Play a single bird chirp — ascending sine sweep. */
+export function playBirdChirp(): void {
+  const ctx = getAudioContext();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(2000, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(4000, ctx.currentTime + 0.12);
+  osc.frequency.exponentialRampToValueAtTime(3000, ctx.currentTime + 0.2);
+  gain.gain.setValueAtTime(0, ctx.currentTime);
+  gain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start();
+  osc.stop(ctx.currentTime + 0.25);
+}
+
+/** Play a single clock tick — short percussive click. */
+export function playClockTick(): void {
+  const ctx = getAudioContext();
+  const bufferSize = Math.floor(ctx.sampleRate * 0.015);
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    const t = i / bufferSize;
+    data[i] = Math.sin(i / (ctx.sampleRate / 3000)) * Math.exp(-t * 30) * 0.2;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  const gain = ctx.createGain();
+  gain.gain.value = 0.05;
+  source.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
 }
 
 /** Play a heavy clunk sound — for loading cargo. */
