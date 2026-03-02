@@ -30,8 +30,8 @@ This repository contains the complete specification for building Choo-Choo USA. 
 ### Build Order
 
 1. Read ALL docs and specs first
-2. Build Phase 1 (Roundhouse) as a standalone scene
-3. Build Phase 2 (National Map) and connect it to Phase 1
+2. ~~Build Phase 1 (Roundhouse) as a standalone scene~~ **DONE**
+3. ~~Build Phase 2 (National Map) and connect it to Phase 1~~ **DONE**
 4. Build Phase 3 (Simulation layer) on top of Phases 1-2
 5. Build Phase 4 (Interiors) as drilldown views
 

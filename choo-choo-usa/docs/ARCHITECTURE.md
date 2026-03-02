@@ -69,10 +69,12 @@ choo-choo-usa/
       simulation.ts
     stores/                      # Zustand state stores
       useSimulationStore.ts      # Master simulation clock and state
-      useTrainStore.ts           # Train positions, statuses, assignments
-      useCargoStore.ts           # Cargo manifests and deliveries
-      usePassengerStore.ts       # Passenger database and journeys
+      useTrainStore.ts           # Train positions, statuses, route progress
+      useRouteStore.ts           # Rail corridor data and selection
+      useStationStore.ts         # Station data and selection
       usePlayerStore.ts          # Player navigation, camera, preferences
+      useCargoStore.ts           # Cargo manifests and deliveries (Phase 3)
+      usePassengerStore.ts       # Passenger database and journeys (Phase 3)
     scenes/                      # Major interactive views
       roundhouse/
         RoundhouseScene.tsx      # Main roundhouse PixiJS canvas
@@ -81,11 +83,12 @@ choo-choo-usa/
         SmokeEffect.ts           # Particle system for smoke/steam
         WakeUpSequence.ts        # Morning departure animation
       national-map/
-        NationalMapScene.tsx     # Leaflet map with train markers
+        NationalMapScene.tsx     # Leaflet map with all layers and HUD
         TrackLayer.tsx           # GeoJSON rail corridor rendering
         TrainMarker.tsx          # Animated train icons on map
-        MapControls.tsx          # Zoom, time-of-day, filters
-        MapTooltip.tsx           # Hover info for trains/stations
+        StationMarker.tsx        # Station dot markers with labels
+        FollowControl.tsx        # Auto-pan map to followed train
+        MapDetailPanels.tsx      # Train/station/corridor detail panels
       station/
         StationScene.tsx         # Station platform PixiJS view
         PlatformView.ts         # People boarding/deboarding
