@@ -34,6 +34,10 @@ import { StationAmbient } from './StationAmbient';
 import { hexToNumber, lerpHexNum } from '../../utils/animation';
 import { getHour } from '../../utils/time';
 import { narrateStation } from '../../engine/narratorMessages';
+import { generateTerrain } from '../../utils/backgrounds/terrainProfile';
+import { drawTreeLine, scatterTrees } from '../../utils/backgrounds/treeDrawing';
+import { scatterGroundStamps } from '../../utils/backgrounds/groundStamps';
+import { createSimplePaperGrain } from '../../utils/backgrounds/paperGrain';
 import { TopBar } from '../../components/hud/TopBar';
 import { Narrator } from '../../components/ui/Narrator';
 import { DepartureBoard } from './DepartureBoard';
@@ -127,17 +131,39 @@ export function StationScene() {
         skyLayer.addChild(cloud);
       }
 
-      // ===== BACKDROP (hills/trees) =====
-      const hills = new Graphics();
-      hills.moveTo(0, 500);
-      for (let hx = 0; hx <= SCENE_WIDTH; hx += 40) {
-        hills.lineTo(hx, 400 + Math.sin(hx * 0.005) * 40 + Math.sin(hx * 0.015) * 20);
+      // ===== BACKDROP (layered hills with trees) =====
+      // Use station name hash as seed for deterministic terrain
+      const terrainSeed = stationId!.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+      const terrainLayers = generateTerrain({
+        width: SCENE_WIDTH,
+        height: SCENE_HEIGHT,
+        groundY: 580,
+        seed: terrainSeed,
+      });
+
+      // Add each terrain layer to its appropriate parallax container
+      for (let i = 0; i < terrainLayers.length; i++) {
+        const layer = terrainLayers[i];
+        if (i < 2) {
+          // Far and mid-far hills go in backdrop
+          backdropLayer.addChild(layer.graphics);
+        } else {
+          // Near hills go in building layer (behind the station)
+          buildingLayer.addChild(layer.graphics);
+        }
       }
-      hills.lineTo(SCENE_WIDTH, SCENE_HEIGHT);
-      hills.lineTo(0, SCENE_HEIGHT);
-      hills.closePath();
-      hills.fill(0x2D5A3D);
-      backdropLayer.addChild(hills);
+
+      // Distant tree line silhouettes along the far hills
+      const distantTreeLine = drawTreeLine(0, SCENE_WIDTH, 430, 0x3A4A6B, 4, undefined);
+      backdropLayer.addChild(distantTreeLine);
+
+      // Mid-ground scattered trees
+      const midTrees = scatterTrees(
+        0, SCENE_WIDTH,
+        (x) => 460 + Math.sin(x * 0.004) * 25,
+        'mid', 2, terrainSeed + 100,
+      );
+      backdropLayer.addChild(midTrees);
 
       // ===== STATION BUILDING =====
       const buildingScale = station.size === 'major_hub' ? 1.0 : station.size === 'regional' ? 0.85 : 0.7;
@@ -182,10 +208,10 @@ export function StationScene() {
       for (const trainId of station.trainsAtStation) {
         const train = trainStore.getTrainById(trainId);
         if (!train) continue;
-        const trainSprite = drawTrain(train.name, train.color, train.type, 0.8);
-        trainSprite.x = SCENE_WIDTH / 2 + 100;
-        trainSprite.y = trackY + 5;
-        platformLayer.addChild(trainSprite);
+        const sprite = drawTrain(train.name, train.color, train.type, 0.8, train.id);
+        sprite.container.x = SCENE_WIDTH / 2 + 100;
+        sprite.container.y = trackY + 5;
+        platformLayer.addChild(sprite.container);
       }
 
       // ===== WAITING PASSENGERS =====
@@ -246,23 +272,44 @@ export function StationScene() {
         platformLayer.addChild(porter);
       }
 
-      // ===== FOREGROUND (grass, flowers) =====
-      const grass = new Graphics();
-      grass.rect(0, SCENE_HEIGHT - 60, SCENE_WIDTH, 60);
-      grass.fill(0x2D5A3D);
-      for (let gx = 0; gx < SCENE_WIDTH; gx += 8) {
-        const gh = 10 + Math.random() * 15;
-        grass.moveTo(gx, SCENE_HEIGHT - 60);
-        grass.lineTo(gx + 2, SCENE_HEIGHT - 60 - gh);
-        grass.stroke({ color: 0x3A7A4F, width: 1.5 });
-      }
-      foregroundLayer.addChild(grass);
+      // ===== FOREGROUND (ground, stamps, near trees) =====
+      // Ground fill
+      const ground = new Graphics();
+      ground.rect(0, SCENE_HEIGHT - 60, SCENE_WIDTH, 60);
+      ground.fill(0x2D5A3D);
+      foregroundLayer.addChild(ground);
+
+      // Near foreground trees (a few scattered along edges)
+      const nearTrees = scatterTrees(
+        0, 200,
+        () => SCENE_HEIGHT - 60,
+        'near', 1.5, terrainSeed + 200,
+      );
+      foregroundLayer.addChild(nearTrees);
+      const nearTreesRight = scatterTrees(
+        SCENE_WIDTH - 250, SCENE_WIDTH,
+        () => SCENE_HEIGHT - 60,
+        'near', 1.5, terrainSeed + 300,
+      );
+      foregroundLayer.addChild(nearTreesRight);
+
+      // Ground stamps (grass tufts, flowers, rocks)
+      const stamps = scatterGroundStamps(
+        0, SCENE_WIDTH,
+        SCENE_HEIGHT - 55,
+        4, terrainSeed + 400,
+      );
+      foregroundLayer.addChild(stamps);
 
       // ===== TIME OVERLAY =====
       const timeOverlay = new Graphics();
       timeOverlay.rect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
       timeOverlay.fill({ color: 0x000000, alpha: 0 });
       app.stage.addChild(timeOverlay);
+
+      // ===== PAPER GRAIN OVERLAY =====
+      const paperGrain = createSimplePaperGrain(SCENE_WIDTH, SCENE_HEIGHT, 0.04);
+      app.stage.addChild(paperGrain);
 
       // ===== AMBIENT EFFECTS =====
       const ambient = new StationAmbient(SCENE_WIDTH);

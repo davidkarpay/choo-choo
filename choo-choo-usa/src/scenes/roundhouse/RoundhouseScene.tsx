@@ -17,11 +17,13 @@ import { TopBar } from '../../components/hud/TopBar';
 import { Narrator } from '../../components/ui/Narrator';
 import { TrainDetail } from '../../components/ui/TrainDetail';
 import { drawTrain } from './drawTrain';
+import type { TrainSprite } from './drawTrain';
 import { SmokeEffect } from './SmokeEffect';
 import { getSkyBrightness, getHour } from '../../utils/time';
 import { easeInOutCubic, lerp, hexToNumber } from '../../utils/animation';
 import { playWhistle, playChug, playGearGrind, playBell } from '../../utils/sound';
 import { startSimulation, stopSimulation } from '../../engine/simulation';
+import { createSimplePaperGrain } from '../../utils/backgrounds/paperGrain';
 import type { Train } from '../../types/train';
 import '../../styles/globals.css';
 import '../../styles/storybook.css';
@@ -326,6 +328,7 @@ export function RoundhouseScene() {
 
       // ===== TRAIN SPRITES =====
       const trainContainers: Map<string, Container> = new Map();
+      const trainSprites: Map<string, TrainSprite> = new Map();
       const smokeEffects: Map<string, SmokeEffect> = new Map();
       const trainStore = useTrainStore.getState();
 
@@ -334,29 +337,33 @@ export function RoundhouseScene() {
         const berthX = CENTER_X + Math.cos(angle) * (BERTH_DISTANCE - 60);
         const berthY = CENTER_Y + Math.sin(angle) * (BERTH_DISTANCE - 60);
 
-        const trainSprite = drawTrain(train.name, train.color, train.type, 0.65);
-        trainSprite.x = berthX;
-        trainSprite.y = berthY;
-        trainSprite.rotation = angle + Math.PI; // Face toward center
-        trainSprite.eventMode = 'static';
-        trainSprite.cursor = 'pointer';
+        const sprite = drawTrain(train.name, train.color, train.type, 0.65, train.id);
+        const trainContainer = sprite.container;
+        trainContainer.x = berthX;
+        trainContainer.y = berthY;
+        trainContainer.rotation = angle + Math.PI; // Face toward center
+        trainContainer.eventMode = 'static';
+        trainContainer.cursor = 'pointer';
 
-        trainSprite.on('pointerdown', () => {
+        trainContainer.on('pointerdown', () => {
           const store = useTrainStore.getState();
           store.selectTrain(train.id);
           showNarrator(TRAIN_TOOLTIPS[train.id] ?? train.personality);
         });
 
-        mainLayer.addChild(trainSprite);
-        trainContainers.set(train.id, trainSprite);
+        mainLayer.addChild(trainContainer);
+        trainContainers.set(train.id, trainContainer);
+        trainSprites.set(train.id, sprite);
 
-        // Smoke emitter per train
+        // Smoke emitter per train — use smokeOrigin from the sprite
         const smoke = new SmokeEffect();
         smoke.container.x = 0;
         smoke.container.y = 0;
-        // Position smoke at the smokestack (front of the train)
-        smoke.emitX = berthX + Math.cos(angle + Math.PI) * 50;
-        smoke.emitY = berthY + Math.sin(angle + Math.PI) * 50 - 30;
+        // Transform smoke origin from local train coords to scene coords
+        const cosA = Math.cos(angle + Math.PI);
+        const sinA = Math.sin(angle + Math.PI);
+        smoke.emitX = berthX + cosA * sprite.smokeOrigin.x - sinA * sprite.smokeOrigin.y;
+        smoke.emitY = berthY + sinA * sprite.smokeOrigin.x + cosA * sprite.smokeOrigin.y;
         mainLayer.addChild(smoke.container);
         smokeEffects.set(train.id, smoke);
 
@@ -483,6 +490,10 @@ export function RoundhouseScene() {
       timeOverlay.rect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
       timeOverlay.fill({ color: 0x000000, alpha: 0 });
       app.stage.addChild(timeOverlay);
+
+      // ===== PAPER GRAIN OVERLAY =====
+      const paperGrain = createSimplePaperGrain(SCENE_WIDTH, SCENE_HEIGHT, 0.035);
+      app.stage.addChild(paperGrain);
 
       // ===== DEPARTURE ANIMATION STATE =====
       let departureSequenceActive = false;
