@@ -179,20 +179,22 @@ function drawSteamEngine(
 
   // ---- Boiler (the dominant cylindrical shape) ----
   const boiler = new Graphics();
-  const boilerTop = frameY - boilerR * 1.8;
+  const boilerTop = frameY - boilerR * 2.2;
   const boilerFrontX = frontX + 8 * s;
   const boilerRearX = rearX - cfg.bodyWidth * 0.28 * s; // boiler ends where cab starts
 
-  // Draw boiler as a shape with rounded top (cylinder profile)
+  // Draw boiler as a clearly cylindrical shape with a pronounced rounded top
   boiler.moveTo(boilerFrontX, frameY);
-  // Bottom of boiler
+  // Bottom of boiler (flat)
   boiler.lineTo(boilerRearX, frameY);
   // Up to cab junction
-  boiler.lineTo(boilerRearX, boilerTop + 8 * s);
-  // Curved top of boiler
-  boiler.quadraticCurveTo(
-    (boilerFrontX + boilerRearX) / 2, boilerTop - 4 * s,
-    boilerFrontX, boilerTop + 4 * s,
+  boiler.lineTo(boilerRearX, boilerTop + 10 * s);
+  // Curved top of boiler — big dramatic arc for obvious cylinder look
+  const boilerMidX = (boilerFrontX + boilerRearX) / 2;
+  boiler.bezierCurveTo(
+    boilerRearX - (boilerRearX - boilerMidX) * 0.3, boilerTop - 6 * s,
+    boilerMidX, boilerTop - 10 * s,
+    boilerFrontX + 5 * s, boilerTop + 2 * s,
   );
   // Down front of boiler (smokebox)
   boiler.lineTo(boilerFrontX, frameY);
@@ -201,9 +203,9 @@ function drawSteamEngine(
   boiler.stroke({ color: INK, width: 2.5 * s });
   container.addChild(boiler);
 
-  // ---- Smokebox Face (front circle) ----
+  // ---- Smokebox Face (front circle — prominent round face) ----
   const smokeboxCY = (frameY + boilerTop + 6 * s) / 2;
-  const smokeboxR = boilerR * 0.7;
+  const smokeboxR = boilerR * 0.85;
   const smokebox = new Graphics();
   smokebox.circle(boilerFrontX, smokeboxCY, smokeboxR);
   smokebox.fill(darken(primary, 0.15));
@@ -216,12 +218,12 @@ function drawSteamEngine(
   smokebox.stroke({ color: INK, width: 1.5 * s });
   container.addChild(smokebox);
 
-  // ---- Smokestack (exaggerated bell shape) ----
+  // ---- Smokestack (dramatically exaggerated bell shape) ----
   const stack = new Graphics();
   const stackX = boilerFrontX + 15 * s;
-  const stackBaseW = 10 * s * cfg.stackScale;
-  const stackTopW = 18 * s * cfg.stackScale;
-  const stackH = 38 * s * cfg.stackScale;
+  const stackBaseW = 12 * s * cfg.stackScale;
+  const stackTopW = 24 * s * cfg.stackScale;
+  const stackH = 48 * s * cfg.stackScale;
   const stackBaseY = boilerTop + 2 * s;
   const stackTopY = stackBaseY - stackH;
 
@@ -251,18 +253,18 @@ function drawSteamEngine(
 
   // ---- Sand Dome (smaller bump, between stack and steam dome) ----
   const sandDomeX = boilerFrontX + W * 0.22;
-  const sandDomeR = 7 * s;
+  const sandDomeR = 9 * s;
   const sandDome = new Graphics();
-  sandDome.ellipse(sandDomeX, boilerTop + 2 * s, sandDomeR, sandDomeR * 0.7);
+  sandDome.ellipse(sandDomeX, boilerTop + 2 * s, sandDomeR, sandDomeR * 0.75);
   sandDome.fill(darken(primary, 0.05));
   sandDome.stroke({ color: INK, width: 1.5 * s });
   container.addChild(sandDome);
 
   // ---- Steam Dome (main dome, at ~40% of boiler) ----
   const steamDomeX = boilerFrontX + W * 0.35;
-  const steamDomeR = 9 * s;
+  const steamDomeR = 12 * s;
   const steamDome = new Graphics();
-  steamDome.ellipse(steamDomeX, boilerTop + 1 * s, steamDomeR, steamDomeR * 0.75);
+  steamDome.ellipse(steamDomeX, boilerTop + 1 * s, steamDomeR, steamDomeR * 0.8);
   steamDome.fill(secondary);
   steamDome.stroke({ color: INK, width: 2 * s });
   container.addChild(steamDome);
@@ -333,9 +335,9 @@ function drawSteamEngine(
   lamp.fill(SUNRISE_GOLD);
   container.addChild(lamp);
 
-  // ---- Cowcatcher / Pilot (V-wedge at front bottom) ----
+  // ---- Cowcatcher / Pilot (V-wedge at front bottom — big and obvious) ----
   const pilot = new Graphics();
-  const pilotTipX = frontX - 16 * s;
+  const pilotTipX = frontX - 22 * s;
   const pilotTopY = frameY - 6 * s;
   const pilotBotY = groundY + 2 * s;
   // Main wedge shape
@@ -548,11 +550,11 @@ function drawDieselEngine(
   exhaustStack.stroke({ color: INK, width: 1.5 * s });
   container.addChild(exhaustStack);
 
-  // ---- Cab (windowed section between hoods) ----
-  const cabW = W * 0.22;
+  // ---- Cab (windowed section between hoods — taller and prominent) ----
+  const cabW = W * 0.24;
   const cabX = longHoodX - cabW + 3 * s;
-  const cabH = H + 18 * s; // taller than hood
-  const cabTop = bodyTop - 18 * s;
+  const cabH = H + 26 * s; // much taller than hood for recognizable profile
+  const cabTop = bodyTop - 26 * s;
   const isWideCab = cfg.features.includes('wide_cab');
 
   const cab = new Graphics();
@@ -568,10 +570,10 @@ function drawDieselEngine(
   cabRoof.stroke({ color: INK, width: 1.5 * s });
   container.addChild(cabRoof);
 
-  // Cab windshields (large windows)
+  // Cab windshields (large, prominent windows)
   const windshield = new Graphics();
-  const wsW = cabW * 0.7;
-  const wsH = cabH * 0.4;
+  const wsW = cabW * 0.75;
+  const wsH = cabH * 0.38;
   const wsX = cabX + (cabW - wsW) / 2;
   const wsY = cabTop + 8 * s;
   // Main windshield
