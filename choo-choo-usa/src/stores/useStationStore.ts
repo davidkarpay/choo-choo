@@ -46,7 +46,7 @@ interface StationStore {
 }
 
 export const useStationStore = create<StationStore>((set, get) => ({
-  stations: (stationSeedData as StationSeed[]).map(initStation),
+  stations: (stationSeedData as unknown as StationSeed[]).map(initStation),
   selectedStationId: null,
 
   selectStation: (id) => set({ selectedStationId: id }),
