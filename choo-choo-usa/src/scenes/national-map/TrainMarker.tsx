@@ -2,15 +2,25 @@
  * TrainMarker.tsx
  *
  * Animated train icons on the national map. Each marker moves with the
- * train's interpolated position, faces the direction of travel, and
- * changes detail level based on zoom.
+ * train's interpolated position, faces the direction of travel using
+ * proper heading rotation, and changes detail level based on zoom.
+ *
+ * Uses inline SVG locomotive silhouettes instead of CSS rectangles,
+ * with multi-puff smoke animations trailing behind.
  *
  * Part of: Choo-Choo USA — Phase 2
+ *
+ * Dependencies:
+ *   - react-leaflet: Marker, Tooltip, useMap
+ *   - leaflet: L.divIcon
+ *   - trainSvgPaths: steamSvg, dieselSvg for silhouette markup
+ *   - useTrainStore: Zustand store for train state
  */
 
 import { Marker, Tooltip, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { useTrainStore } from '../../stores/useTrainStore';
+import { steamSvg, dieselSvg } from '../../utils/trainSvgPaths';
 import type { Train } from '../../types/train';
 import { useState, useEffect } from 'react';
 
@@ -18,13 +28,41 @@ interface TrainMarkersProps {
   onTrainClick: (trainId: string) => void;
 }
 
+/**
+ * Generate the SVG markup for a train's type and colors.
+ * Cached per train ID since colors don't change at runtime.
+ */
+const svgCache = new Map<string, string>();
+
+function getTrainSvg(train: Train): string {
+  let cached = svgCache.get(train.id);
+  if (!cached) {
+    cached = train.type === 'steam'
+      ? steamSvg(train.color.primary, train.color.secondary, train.color.accent)
+      : dieselSvg(train.color.primary, train.color.secondary, train.color.accent);
+    svgCache.set(train.id, cached);
+  }
+  return cached;
+}
+
+/**
+ * Generate smoke puff spans for the trailing smoke effect.
+ * 3 puffs with staggered animation delays create a continuous plume.
+ */
+function smokePuffsHtml(): string {
+  return `<span class="train-smoke-puff" style="animation-delay:0s"></span>` +
+    `<span class="train-smoke-puff" style="animation-delay:0.5s"></span>` +
+    `<span class="train-smoke-puff" style="animation-delay:1.0s"></span>`;
+}
+
 function createTrainIcon(
   train: Train,
   zoom: number,
   isFollowed: boolean,
 ): L.DivIcon {
-  const facingLeft = train.heading > 180;
-  const flipStyle = facingLeft ? 'transform:scaleX(-1);' : '';
+  // Heading: 0=N, 90=E, 180=S, 270=W. SVG faces right (East).
+  // Rotation: heading - 90 aligns 0°=North → rotated so East-facing SVG points North.
+  const rotationDeg = train.heading - 90;
   const followedClass = isFollowed ? ' train-map-marker--followed' : '';
 
   if (zoom <= 6) {
@@ -37,27 +75,35 @@ function createTrainIcon(
     });
   }
 
+  const svg = getTrainSvg(train);
+
   if (zoom <= 9) {
-    // Small train icon at mid zoom
+    // Small SVG silhouette at mid zoom
+    const w = 40;
+    const h = train.type === 'steam' ? 22 : 20;
     return L.divIcon({
       className: '',
-      iconSize: [28, 20],
-      iconAnchor: [14, 10],
-      html: `<div class="train-map-marker${followedClass}" style="${flipStyle}">
-        <div class="train-map-icon" style="background:${train.color.primary}"></div>
+      iconSize: [w, h],
+      iconAnchor: [w / 2, h / 2],
+      html: `<div class="train-map-marker train-svg-marker${followedClass}" style="width:${w}px;height:${h}px;transform:rotate(${rotationDeg}deg);transform-origin:center;">
+        <div class="train-svg-icon" style="width:${w}px;height:${h}px;">${svg}</div>
+        <div class="train-smoke-container">${smokePuffsHtml()}</div>
       </div>`,
     });
   }
 
-  // Detailed icon with name at high zoom
+  // Detailed SVG silhouette with name at high zoom
+  const w = 56;
+  const h = train.type === 'steam' ? 30 : 26;
   return L.divIcon({
     className: '',
-    iconSize: [28, 34],
-    iconAnchor: [14, 17],
-    html: `<div class="train-map-marker${followedClass}" style="${flipStyle}">
-      <div class="train-map-icon" style="background:${train.color.primary}"></div>
-      <span class="train-map-label">${train.name}</span>
-    </div>`,
+    iconSize: [w, h + 16],
+    iconAnchor: [w / 2, h / 2],
+    html: `<div class="train-map-marker train-svg-marker${followedClass}" style="transform:rotate(${rotationDeg}deg);transform-origin:center ${h / 2}px;">
+      <div class="train-svg-icon" style="width:${w}px;height:${h}px;">${svg}</div>
+      <div class="train-smoke-container">${smokePuffsHtml()}</div>
+    </div>
+    <span class="train-map-label" style="transform:rotate(${-rotationDeg}deg);">${train.name}</span>`,
   });
 }
 
