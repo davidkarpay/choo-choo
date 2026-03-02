@@ -78,9 +78,9 @@ function createTrainIcon(
   const svg = getTrainSvg(train);
 
   if (zoom <= 9) {
-    // Small SVG silhouette at mid zoom
-    const w = 40;
-    const h = train.type === 'steam' ? 22 : 20;
+    // SVG silhouette at mid zoom — big enough to be recognizable
+    const w = 64;
+    const h = train.type === 'steam' ? 34 : 30;
     return L.divIcon({
       className: '',
       iconSize: [w, h],
@@ -93,8 +93,8 @@ function createTrainIcon(
   }
 
   // Detailed SVG silhouette with name at high zoom
-  const w = 56;
-  const h = train.type === 'steam' ? 30 : 26;
+  const w = 80;
+  const h = train.type === 'steam' ? 42 : 36;
   return L.divIcon({
     className: '',
     iconSize: [w, h + 16],

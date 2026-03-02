@@ -208,7 +208,7 @@ export function StationScene() {
       for (const trainId of station.trainsAtStation) {
         const train = trainStore.getTrainById(trainId);
         if (!train) continue;
-        const sprite = drawTrain(train.name, train.color, train.type, 0.8, train.id);
+        const sprite = drawTrain(train.name, train.color, train.type, 1.0, train.id);
         sprite.container.x = SCENE_WIDTH / 2 + 100;
         sprite.container.y = trackY + 5;
         platformLayer.addChild(sprite.container);

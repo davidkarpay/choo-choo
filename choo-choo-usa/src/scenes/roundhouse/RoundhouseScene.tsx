@@ -337,7 +337,7 @@ export function RoundhouseScene() {
         const berthX = CENTER_X + Math.cos(angle) * (BERTH_DISTANCE - 60);
         const berthY = CENTER_Y + Math.sin(angle) * (BERTH_DISTANCE - 60);
 
-        const sprite = drawTrain(train.name, train.color, train.type, 0.65, train.id);
+        const sprite = drawTrain(train.name, train.color, train.type, 0.85, train.id);
         const trainContainer = sprite.container;
         trainContainer.x = berthX;
         trainContainer.y = berthY;

@@ -85,10 +85,10 @@ const DEFAULT_STEAM: SteamSilhouette = {
   wheels: { pilotWheels: 4, driveWheels: 6, trailingWheels: 2 },
   bodyWidth: 160,
   bodyHeight: 58,
-  stackScale: 1.0,
-  boilerScale: 1.0,
+  stackScale: 1.15,
+  boilerScale: 1.1,
   hasTender: true,
-  driveWheelRadius: 16,
+  driveWheelRadius: 19,
   features: [],
 };
 
@@ -104,7 +104,7 @@ const DEFAULT_DIESEL: DieselSilhouette = {
   longHoodRatio: 0.55,
   hasDynamicBrake: false,
   hasSnowplow: false,
-  wheelRadius: 9,
+  wheelRadius: 12,
   features: [],
 };
 
@@ -123,7 +123,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.3,
     boilerScale: 1.25,
     hasTender: true,
-    driveWheelRadius: 18,
+    driveWheelRadius: 21,
     features: [],
   },
 
@@ -135,7 +135,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 0.9,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 16,
+    driveWheelRadius: 19,
     features: ['streamlined'],
   },
 
@@ -147,7 +147,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.1,
     boilerScale: 1.05,
     hasTender: true,
-    driveWheelRadius: 15,
+    driveWheelRadius: 18,
     features: ['patina'],
   },
 
@@ -159,7 +159,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.2,
     boilerScale: 1.3,
     hasTender: true,
-    driveWheelRadius: 17,
+    driveWheelRadius: 20,
     features: ['articulated'],
   },
 
@@ -173,7 +173,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.15,
     boilerScale: 0.9,
     hasTender: true,
-    driveWheelRadius: 15,
+    driveWheelRadius: 18,
     features: [],
   },
 
@@ -185,7 +185,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.0,
     boilerScale: 1.05,
     hasTender: true,
-    driveWheelRadius: 17,
+    driveWheelRadius: 20,
     features: ['streamlined', 'observation_dome'],
   },
 
@@ -197,7 +197,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.15,
     boilerScale: 1.15,
     hasTender: true,
-    driveWheelRadius: 17,
+    driveWheelRadius: 20,
     features: [],
   },
 
@@ -209,7 +209,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.0,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 16,
+    driveWheelRadius: 19,
     features: ['streamlined'],
   },
 
@@ -221,7 +221,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.0,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 17,
+    driveWheelRadius: 20,
     features: ['streamlined'],
   },
 
@@ -233,7 +233,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.05,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 16,
+    driveWheelRadius: 19,
     features: [],
   },
 
@@ -245,7 +245,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 0.9,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 16,
+    driveWheelRadius: 19,
     features: ['streamlined'],
   },
 
@@ -257,7 +257,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.0,
     boilerScale: 0.95,
     hasTender: true,
-    driveWheelRadius: 15,
+    driveWheelRadius: 18,
     features: [],
   },
 
@@ -269,7 +269,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     stackScale: 1.05,
     boilerScale: 1.0,
     hasTender: true,
-    driveWheelRadius: 16,
+    driveWheelRadius: 19,
     features: [],
   },
 
@@ -283,7 +283,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.5,
     hasDynamicBrake: false,
     hasSnowplow: false,
-    wheelRadius: 8,
+    wheelRadius: 11,
     features: ['wide_cab'],
   },
 
@@ -295,7 +295,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.6,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 10,
+    wheelRadius: 13,
     features: ['flared_radiators'],
   },
 
@@ -307,7 +307,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.55,
     hasDynamicBrake: false,
     hasSnowplow: false,
-    wheelRadius: 9,
+    wheelRadius: 12,
     features: [],
   },
 
@@ -319,7 +319,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.55,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 9,
+    wheelRadius: 12,
     features: [],
   },
 
@@ -331,7 +331,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.58,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 10,
+    wheelRadius: 13,
     features: ['double_stack'],
   },
 
@@ -343,7 +343,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.55,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 9,
+    wheelRadius: 12,
     features: [],
   },
 
@@ -355,7 +355,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.55,
     hasDynamicBrake: false,
     hasSnowplow: false,
-    wheelRadius: 9,
+    wheelRadius: 12,
     features: [],
   },
 
@@ -367,7 +367,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.5,
     hasDynamicBrake: false,
     hasSnowplow: false,
-    wheelRadius: 8,
+    wheelRadius: 11,
     features: [],
   },
 
@@ -379,7 +379,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.6,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 10,
+    wheelRadius: 13,
     features: ['flared_radiators'],
   },
 
@@ -391,7 +391,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.58,
     hasDynamicBrake: true,
     hasSnowplow: false,
-    wheelRadius: 10,
+    wheelRadius: 13,
     features: ['wide_cab', 'double_stack'],
   },
 
@@ -403,7 +403,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.55,
     hasDynamicBrake: false,
     hasSnowplow: false,
-    wheelRadius: 9,
+    wheelRadius: 12,
     features: [],
   },
 
@@ -415,7 +415,7 @@ export const TRAIN_SILHOUETTES: Record<string, TrainSilhouette> = {
     longHoodRatio: 0.58,
     hasDynamicBrake: true,
     hasSnowplow: true,
-    wheelRadius: 10,
+    wheelRadius: 13,
     features: ['snowplow', 'wide_cab'],
   },
 };
