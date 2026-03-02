@@ -3,17 +3,19 @@
  *
  * The "big picture" view: a styled Leaflet map of the continental US
  * with animated train markers, station dots, and rail corridors.
- * Includes time-of-day overlays, detail panels, legend, and HUD.
+ * Includes time-of-day overlays, detail panels, legend, HUD,
+ * simulation dashboard, and narrator event ticker.
  *
- * Part of: Choo-Choo USA — Phase 2
+ * Part of: Choo-Choo USA — Phase 2 + Phase 3
  * See: /specs/PHASE_2_NATIONAL_MAP.md for full specification
  *
  * Dependencies:
  *   - leaflet / react-leaflet: map rendering
  *   - zustand stores: simulation, train, route, station, player state
+ *   - event bus: narrator messages
  */
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import { useSimulationStore } from '../../stores/useSimulationStore';
@@ -25,9 +27,16 @@ import { TrainMarkers } from './TrainMarker';
 import { FollowControl } from './FollowControl';
 import { MapTrainDetail, MapStationDetail, MapCorridorDetail } from './MapDetailPanels';
 import { Clock } from '../../components/ui/Clock';
+import { CargoOverview } from '../../components/hud/CargoOverview';
+import { PassengerOverview } from '../../components/hud/PassengerOverview';
+import { FleetOverview } from '../../components/hud/FleetOverview';
+import { IndustryPanel } from '../../components/hud/IndustryPanel';
 import { startSimulation, stopSimulation } from '../../engine/simulation';
+import { eventBus } from '../../engine/events';
+import { narrateEvent } from '../../engine/narratorMessages';
 import { playUIClick } from '../../utils/sound';
 import type { SimulationSpeed } from '../../types/simulation';
+import type { SimEvent } from '../../engine/events';
 import 'leaflet/dist/leaflet.css';
 import '../../styles/globals.css';
 import '../../styles/storybook.css';
@@ -51,10 +60,30 @@ type DetailPanel =
   | { type: 'corridor'; id: string }
   | null;
 
+type DashboardTab = 'cargo' | 'passengers' | 'fleet' | 'industries';
+
+/** All operators available for filtering. */
+const ALL_OPERATORS = ['BNSF', 'UP', 'CSX', 'NS', 'CN', 'Amtrak'];
+
+const OPERATOR_LEGEND_COLORS: Record<string, string> = {
+  BNSF: '#E87722',
+  UP: '#00274C',
+  CSX: '#0033A0',
+  NS: '#52B848',
+  CN: '#E31837',
+  Amtrak: '#1A5DAD',
+};
+
 export function NationalMapScene() {
   const navigate = useNavigate();
   const [detailPanel, setDetailPanel] = useState<DetailPanel>(null);
   const [legendOpen, setLegendOpen] = useState(false);
+  const [dashboardOpen, setDashboardOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<DashboardTab>('cargo');
+  const [narratorText, setNarratorText] = useState<string | null>(null);
+  const narratorTimer = useRef<number | null>(null);
+  /** Visible operators — empty set means show all. */
+  const [visibleOperators, setVisibleOperators] = useState<Set<string>>(new Set());
 
   const speed = useSimulationStore((s) => s.speed);
   const setSpeed = useSimulationStore((s) => s.setSpeed);
@@ -69,6 +98,46 @@ export function NationalMapScene() {
     startSimulation();
     return () => stopSimulation();
   }, [setScene]);
+
+  // Subscribe to events for narrator ticker
+  useEffect(() => {
+    let lastNarration = 0;
+    // Phase 5: increased interval proportional to larger train count
+    const MIN_INTERVAL = 5000;
+
+    const handler = (event: SimEvent) => {
+      const now = Date.now();
+      if (now - lastNarration < MIN_INTERVAL) return;
+
+      // Only narrate certain events to avoid spam
+      if (event.type === 'cargo_loaded' || event.type === 'passenger_boarded') return;
+
+      const text = narrateEvent(event);
+      if (!text) return;
+
+      lastNarration = now;
+      setNarratorText(text);
+
+      // Auto-dismiss after 5 seconds
+      if (narratorTimer.current) clearTimeout(narratorTimer.current);
+      narratorTimer.current = window.setTimeout(() => {
+        setNarratorText(null);
+      }, 5000);
+    };
+
+    const unsubs = [
+      eventBus.on('train_arrived', handler),
+      eventBus.on('train_departed', handler),
+      eventBus.on('cargo_delivered', handler),
+      eventBus.on('passenger_arrived', handler),
+      eventBus.on('new_day', handler),
+    ];
+
+    return () => {
+      unsubs.forEach((unsub) => unsub());
+      if (narratorTimer.current) clearTimeout(narratorTimer.current);
+    };
+  }, []);
 
   const handleTrainClick = useCallback((trainId: string) => {
     setDetailPanel({ type: 'train', id: trainId });
@@ -113,7 +182,7 @@ export function NationalMapScene() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
 
-        <TrackLayer onCorridorClick={handleCorridorClick} />
+        <TrackLayer onCorridorClick={handleCorridorClick} visibleOperators={visibleOperators} />
         <StationMarkers onStationClick={handleStationClick} />
         <TrainMarkers onTrainClick={handleTrainClick} />
         <FollowControl />
@@ -130,6 +199,16 @@ export function NationalMapScene() {
             Roundhouse
           </button>
           <Clock />
+          <button
+            className={`map-nav-btn ${dashboardOpen ? 'map-nav-btn--active' : ''}`}
+            onClick={() => {
+              playUIClick();
+              setDashboardOpen(!dashboardOpen);
+            }}
+            style={{ fontSize: '0.75rem' }}
+          >
+            Dashboard
+          </button>
         </div>
         <div className="top-bar__controls">
           {SPEEDS.map((s) => (
@@ -148,6 +227,29 @@ export function NationalMapScene() {
           ))}
         </div>
       </div>
+
+      {/* Dashboard overlay */}
+      {dashboardOpen && (
+        <div className="dashboard-overlay">
+          <div className="dashboard-tabs">
+            {(['cargo', 'passengers', 'fleet', 'industries'] as DashboardTab[]).map((tab) => (
+              <button
+                key={tab}
+                className={`dashboard-tab ${activeTab === tab ? 'dashboard-tab--active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
+          <div className="dashboard-content">
+            {activeTab === 'cargo' && <CargoOverview />}
+            {activeTab === 'passengers' && <PassengerOverview />}
+            {activeTab === 'fleet' && <FleetOverview />}
+            {activeTab === 'industries' && <IndustryPanel />}
+          </div>
+        </div>
+      )}
 
       {/* Detail panels */}
       {detailPanel?.type === 'train' && (
@@ -183,9 +285,31 @@ export function NationalMapScene() {
         </div>
       )}
 
+      {/* Narrator ticker */}
+      {narratorText && (
+        <div className="narrator-ticker">
+          <div className="narrator-ticker__text">{narratorText}</div>
+        </div>
+      )}
+
       {/* Legend */}
       <div className="map-legend">
-        {legendOpen && <Legend />}
+        {legendOpen && (
+          <Legend
+            visibleOperators={visibleOperators}
+            onToggleOperator={(op) => {
+              setVisibleOperators((prev) => {
+                const next = new Set(prev);
+                if (next.has(op)) {
+                  next.delete(op);
+                } else {
+                  next.add(op);
+                }
+                return next;
+              });
+            }}
+          />
+        )}
         <button
           className="map-legend__toggle"
           onClick={() => setLegendOpen(!legendOpen)}
@@ -193,6 +317,7 @@ export function NationalMapScene() {
           {legendOpen ? 'Hide Legend' : 'Legend'}
         </button>
       </div>
+
     </div>
   );
 }
@@ -220,26 +345,36 @@ function MapStateSync() {
   return null;
 }
 
-function Legend() {
+function Legend({
+  visibleOperators,
+  onToggleOperator,
+}: {
+  visibleOperators: Set<string>;
+  onToggleOperator: (op: string) => void;
+}) {
+  const showAll = visibleOperators.size === 0;
+
   return (
     <div className="map-legend__body">
-      <div style={{ fontWeight: 700, marginBottom: 6 }}>Corridors</div>
-      <div className="map-legend__item">
-        <div className="map-legend__swatch" style={{ background: '#2E2E38' }} />
-        <span>Coal Line</span>
-      </div>
-      <div className="map-legend__item">
-        <div className="map-legend__swatch" style={{ background: '#5B98B5' }} />
-        <span>Passenger</span>
-      </div>
-      <div className="map-legend__item">
-        <div className="map-legend__swatch" style={{ background: '#E8913A' }} />
-        <span>Freight</span>
-      </div>
-      <div className="map-legend__item">
-        <div className="map-legend__swatch" style={{ background: '#D4A843' }} />
-        <span>Agriculture</span>
-      </div>
+      <div style={{ fontWeight: 700, marginBottom: 6 }}>Operators</div>
+      {ALL_OPERATORS.map((op) => {
+        const isVisible = showAll || visibleOperators.has(op);
+        return (
+          <div
+            key={op}
+            className="map-legend__item"
+            style={{ cursor: 'pointer', opacity: isVisible ? 1 : 0.4 }}
+            onClick={() => onToggleOperator(op)}
+          >
+            <div
+              className="map-legend__swatch"
+              style={{ background: OPERATOR_LEGEND_COLORS[op] }}
+            />
+            <span>{op}</span>
+          </div>
+        );
+      })}
+
       <div style={{ fontWeight: 700, marginTop: 8, marginBottom: 6 }}>Stations</div>
       <div className="map-legend__item">
         <div className="map-legend__dot" style={{ background: '#C45B3E' }} />
@@ -252,6 +387,19 @@ function Legend() {
       <div className="map-legend__item">
         <div className="map-legend__dot" style={{ background: '#D4A843', width: 6, height: 6 }} />
         <span>Local</span>
+      </div>
+      <div className="map-legend__item">
+        <div
+          className="map-legend__dot"
+          style={{
+            background: '#F4C542',
+            width: 10,
+            height: 10,
+            transform: 'rotate(45deg)',
+            border: '1px solid #1A1A2E',
+          }}
+        />
+        <span>Junction</span>
       </div>
     </div>
   );

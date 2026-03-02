@@ -152,3 +152,70 @@ export function playBell(): void {
   osc.start();
   osc.stop(ctx.currentTime + 0.8);
 }
+
+/** Play a station bell — two cheerful dings when a train arrives. */
+export function playStationBell(): void {
+  const ctx = getAudioContext();
+
+  for (let i = 0; i < 2; i++) {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const offset = i * 0.25;
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1400, ctx.currentTime + offset);
+    osc.frequency.exponentialRampToValueAtTime(1100, ctx.currentTime + offset + 0.4);
+    gain.gain.setValueAtTime(0, ctx.currentTime + offset);
+    gain.gain.linearRampToValueAtTime(0.08, ctx.currentTime + offset + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.5);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime + offset);
+    osc.stop(ctx.currentTime + offset + 0.5);
+  }
+}
+
+/** Play a cheerful celebration chime — for cargo delivery milestones. */
+export function playCelebrationChime(): void {
+  const ctx = getAudioContext();
+  const notes = [523, 659, 784]; // C5, E5, G5 — major chord arpeggio
+
+  notes.forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    const offset = i * 0.12;
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime + offset);
+    gain.gain.setValueAtTime(0, ctx.currentTime + offset);
+    gain.gain.linearRampToValueAtTime(0.06, ctx.currentTime + offset + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.6);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(ctx.currentTime + offset);
+    osc.stop(ctx.currentTime + offset + 0.6);
+  });
+}
+
+/** Play a heavy clunk sound — for loading cargo. */
+export function playLoadingSound(): void {
+  const ctx = getAudioContext();
+  const bufferSize = Math.floor(ctx.sampleRate * 0.15);
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    const t = i / bufferSize;
+    // Sharp impact with fast decay
+    const envelope = Math.exp(-t * 12);
+    const rumble = Math.sin(i / (ctx.sampleRate / 80)) * 0.6;
+    const click = Math.sin(i / (ctx.sampleRate / 300)) * 0.4;
+    data[i] = (rumble + click) * envelope * 0.12;
+  }
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  const gain = ctx.createGain();
+  gain.gain.value = 0.1;
+  source.connect(gain);
+  gain.connect(ctx.destination);
+  source.start();
+}

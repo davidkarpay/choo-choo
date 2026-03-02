@@ -2,15 +2,19 @@
  * MapDetailPanels.tsx
  *
  * Detail panels that appear when clicking trains, stations, or corridors
- * on the national map. Styled as storybook parchment panels.
+ * on the national map. Styled as storybook parchment panels. Phase 3
+ * adds live cargo and passenger data to train and station panels.
  *
- * Part of: Choo-Choo USA — Phase 2
+ * Part of: Choo-Choo USA — Phase 2 + Phase 3
  */
 
 import { Panel } from '../../components/ui/Panel';
 import { useTrainStore } from '../../stores/useTrainStore';
 import { useStationStore } from '../../stores/useStationStore';
 import { useRouteStore } from '../../stores/useRouteStore';
+import { useCargoStore } from '../../stores/useCargoStore';
+import { usePassengerStore } from '../../stores/usePassengerStore';
+import { availableCars } from '../../engine/cargoCapacity';
 
 interface TrainDetailPanelProps {
   trainId: string;
@@ -22,6 +26,8 @@ export function MapTrainDetail({ trainId, onClose, onFollow }: TrainDetailPanelP
   const train = useTrainStore((s) => s.getTrainById(trainId));
   const routes = useRouteStore((s) => s.routes);
   const followedId = useTrainStore((s) => s.followedTrainId);
+  const cargoOnTrain = useCargoStore((s) => s.getOnTrain(trainId));
+  const passengersOnTrain = usePassengerStore((s) => s.getOnTrain(trainId));
 
   if (!train) return null;
 
@@ -31,11 +37,15 @@ export function MapTrainDetail({ trainId, onClose, onFollow }: TrainDetailPanelP
 
   const statusLabel = train.status === 'en_route'
     ? `En route on ${route?.name ?? 'unknown corridor'}`
+    : train.status === 'at_station' && train.dwellStationId
+    ? `Stopped at ${train.dwellStationId}`
     : train.status === 'returning'
     ? `Returning home from ${route?.name ?? 'unknown corridor'}`
     : train.status.replace('_', ' ');
 
   const progressPct = Math.round(train.routeProgress * 100);
+  const freeCars = availableCars(train);
+  const usedCars = train.maxCars - freeCars;
 
   return (
     <div className="map-detail">
@@ -66,8 +76,36 @@ export function MapTrainDetail({ trainId, onClose, onFollow }: TrainDetailPanelP
           <span className="train-detail__stat-value">{train.speedMph} mph</span>
         </div>
         <div className="train-detail__stat">
-          <span className="train-detail__stat-label">Cargo</span>
-          <span className="train-detail__stat-value">{train.cargoCapability.join(', ')}</span>
+          <span className="train-detail__stat-label">Capacity</span>
+          <span className="train-detail__stat-value">{usedCars}/{train.maxCars} cars</span>
+        </div>
+
+        {/* Live cargo */}
+        {cargoOnTrain.length > 0 && (
+          <div className="train-detail__stat">
+            <span className="train-detail__stat-label">Cargo</span>
+            <span className="train-detail__stat-value">
+              {cargoOnTrain.length} shipments ({cargoOnTrain.reduce((sum, c) => sum + c.quantity, 0)} tons)
+            </span>
+          </div>
+        )}
+
+        {/* Live passengers */}
+        {passengersOnTrain.length > 0 && (
+          <div className="train-detail__stat">
+            <span className="train-detail__stat-label">Passengers</span>
+            <span className="train-detail__stat-value">{passengersOnTrain.length} aboard</span>
+          </div>
+        )}
+
+        {/* Lifetime stats */}
+        <div className="train-detail__stat">
+          <span className="train-detail__stat-label">Lifetime Miles</span>
+          <span className="train-detail__stat-value">{Math.round(train.stats.totalMiles).toLocaleString()}</span>
+        </div>
+        <div className="train-detail__stat">
+          <span className="train-detail__stat-label">Deliveries</span>
+          <span className="train-detail__stat-value">{train.stats.totalDeliveries}</span>
         </div>
 
         <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
@@ -93,8 +131,16 @@ interface StationDetailPanelProps {
 
 export function MapStationDetail({ stationId, onClose }: StationDetailPanelProps) {
   const station = useStationStore((s) => s.getStationById(stationId));
+  const waitingCargo = useCargoStore((s) => s.getWaitingAtStation(stationId));
+  const waitingPassengers = usePassengerStore((s) => s.getWaitingAtStation(stationId));
 
   if (!station) return null;
+
+  // Count waiting cargo by type
+  const cargoByType = new Map<string, number>();
+  for (const c of waitingCargo) {
+    cargoByType.set(c.type, (cargoByType.get(c.type) ?? 0) + 1);
+  }
 
   return (
     <div className="map-detail">
@@ -124,10 +170,26 @@ export function MapStationDetail({ stationId, onClose }: StationDetailPanelProps
           <span className="train-detail__stat-label">Tracks</span>
           <span className="train-detail__stat-value">{station.trackCount}</span>
         </div>
-        <div className="train-detail__stat">
-          <span className="train-detail__stat-label">Style</span>
-          <span className="train-detail__stat-value">{station.architectureStyle}</span>
-        </div>
+
+        {/* Live cargo waiting */}
+        {waitingCargo.length > 0 && (
+          <div className="train-detail__stat">
+            <span className="train-detail__stat-label">Waiting Cargo</span>
+            <span className="train-detail__stat-value">
+              {waitingCargo.length} shipments
+              {cargoByType.size > 0 && ` (${[...cargoByType.entries()].map(([t, n]) => `${n} ${t}`).join(', ')})`}
+            </span>
+          </div>
+        )}
+
+        {/* Live passengers waiting */}
+        {waitingPassengers.length > 0 && (
+          <div className="train-detail__stat">
+            <span className="train-detail__stat-label">Waiting Passengers</span>
+            <span className="train-detail__stat-value">{waitingPassengers.length} people</span>
+          </div>
+        )}
+
         {station.industries.length > 0 && (
           <div className="train-detail__stat">
             <span className="train-detail__stat-label">Industries</span>

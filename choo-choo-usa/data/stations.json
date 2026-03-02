@@ -12,7 +12,10 @@
     "industries": [
       { "type": "distribution", "name": "Chicago Distribution Center", "produces": [], "consumes": ["packages", "produce", "grain"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
       { "type": "food_processing", "name": "Midwest Food Co.", "produces": ["packages"], "consumes": ["grain", "livestock"], "productionRate": 0.3, "minBatch": 5, "maxBatch": 15 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "new-york-ny",
@@ -26,7 +29,10 @@
     "description": "The grandest station in all the land, with a ceiling painted like the night sky -- stars and constellations glowing blue and gold above the bustling crowds. Thousands of people pass through here every day, arriving from everywhere and going to everywhere else.",
     "industries": [
       { "type": "distribution", "name": "East Coast Distribution Hub", "produces": [], "consumes": ["packages", "produce", "automobiles", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "los-angeles-ca",
@@ -40,7 +46,10 @@
     "description": "Where the trains meet the Pacific Ocean. Los Angeles Union Station has red-tile roofs and cool courtyards with palm trees. Freight trains arrive here carrying goods from all across the country, and container ships in the nearby port carry them across the sea.",
     "industries": [
       { "type": "distribution", "name": "West Coast Import/Export", "produces": ["packages"], "consumes": ["packages", "automobiles", "fuel"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 30 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "kansas-city-mo",
@@ -54,7 +63,10 @@
     "description": "Right in the middle of America, Kansas City is where the grain trains meet the freight trains. The station sits on a bluff overlooking the Missouri River, and from the platform you can see trains stretching all the way to the horizon.",
     "industries": [
       { "type": "agriculture_grain", "name": "Great Plains Grain Elevator", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 50, "maxBatch": 200 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "denver-co",
@@ -68,7 +80,10 @@
     "description": "The Mile High City -- where the plains end and the mountains begin. Denver is the last flat stop before the trains start climbing into the Rockies. This is where Iron Mike joins the big engines to help them over the passes.",
     "industries": [
       { "type": "distribution", "name": "Rocky Mountain Distribution", "produces": [], "consumes": ["packages", "produce", "lumber"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "houston-tx",
@@ -83,7 +98,10 @@
     "industries": [
       { "type": "oil_refining", "name": "Gulf Coast Refinery", "produces": ["fuel", "chemicals"], "consumes": [], "productionRate": 0.6, "minBatch": 20, "maxBatch": 80 },
       { "type": "livestock", "name": "Texas Cattle Exchange", "produces": ["livestock"], "consumes": [], "productionRate": 0.3, "minBatch": 30, "maxBatch": 100 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "charleston-wv",
@@ -97,7 +115,10 @@
     "description": "Tucked into a green valley along the Kanawha River, Charleston is coal country. The depot is modest but busy -- hopper cars line up here full of black coal, waiting for Big Thunder to haul them north.",
     "industries": [
       { "type": "coal_mining", "name": "Appalachian Coal Co.", "produces": ["coal"], "consumes": [], "productionRate": 0.7, "minBatch": 40, "maxBatch": 150 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "boston-ma",
@@ -111,7 +132,10 @@
     "description": "The northern anchor of the Northeast Corridor, where brick and cobblestone meet the rails. Students, professors, and lobster fishermen alike crowd the platform as Daisy Belle whistles her approach.",
     "industries": [
       { "type": "distribution", "name": "New England Distribution", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "washington-dc",
@@ -125,7 +149,10 @@
     "description": "The nation's capital station, with soaring arches and gleaming white stone. Senators, diplomats, and school groups on field trips all pass through these grand doors.",
     "industries": [
       { "type": "distribution", "name": "Capital Region Distribution", "produces": [], "consumes": ["packages", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "seattle-wa",
@@ -139,7 +166,10 @@
     "description": "Where the great forests of the Pacific Northwest meet the railroad. From the platform you can see the snow-capped peak of Mount Rainier on a clear day. Lumber trains begin their long journey south from here.",
     "industries": [
       { "type": "lumber", "name": "Pacific Lumber Mill", "produces": ["lumber"], "consumes": [], "productionRate": 0.4, "minBatch": 20, "maxBatch": 60 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "sacramento-ca",
@@ -153,7 +183,10 @@
     "description": "The gateway to California's Central Valley -- the most productive farmland in the world. Refrigerated cars line up here, ready to carry oranges, almonds, grapes, and tomatoes across the country.",
     "industries": [
       { "type": "agriculture_produce", "name": "Central Valley Farms", "produces": ["produce"], "consumes": [], "productionRate": 0.6, "minBatch": 15, "maxBatch": 50 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "new-orleans-la",
@@ -167,7 +200,10 @@
     "description": "Where jazz drifts through the station and the Mississippi River rolls nearby. New Orleans is a great port city where rail meets river meets sea. Cargo from all over America passes through here on its way to the world.",
     "industries": [
       { "type": "distribution", "name": "Gulf Port Export Terminal", "produces": [], "consumes": ["grain", "fuel", "chemicals", "coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "west-palm-beach-fl",
@@ -181,7 +217,10 @@
     "description": "A sunny little station with palm trees swaying and warm breezes blowing. Snowbirds arrive here every winter, and fresh Florida produce heads north every morning.",
     "industries": [
       { "type": "agriculture_produce", "name": "Palm Beach Citrus Groves", "produces": ["produce"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 30 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "columbus-oh",
@@ -195,7 +234,10 @@
     "description": "In the heart of Ohio, Columbus is where the coal trains deliver their cargo to the power plants that keep the Midwest's lights burning bright.",
     "industries": [
       { "type": "power_generation", "name": "Ohio Valley Power", "produces": [], "consumes": ["coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "pittsburgh-pa",
@@ -209,7 +251,10 @@
     "description": "The Steel City! Where three rivers meet and the great steel mills glow orange against the night sky. Iron ore and coal come in, and gleaming steel comes out.",
     "industries": [
       { "type": "steel_production", "name": "Pittsburgh Steel Works", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.4, "minBatch": 20, "maxBatch": 60 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   },
   {
     "id": "portland-or",
@@ -223,6 +268,1136 @@
     "description": "Rain-washed and green, Portland's station has a clock tower you can see from across the river. Lumber trains roll through here, carrying the scent of fresh-cut Douglas fir.",
     "industries": [
       { "type": "lumber", "name": "Oregon Forest Products", "produces": ["lumber"], "consumes": [], "productionRate": 0.35, "minBatch": 15, "maxBatch": 45 }
-    ]
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "albuquerque-nm",
+    "name": "Alvarado Transportation Center",
+    "city": "Albuquerque",
+    "state": "New Mexico",
+    "position": [35.0844, -106.6504],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Under skies so wide and blue they make your heart ache, Albuquerque sits where the desert meets the Rio Grande. The old station has adobe walls and turquoise trim, and the hot wind carries the scent of sage and red chile.",
+    "industries": [
+      { "type": "distribution", "name": "Southwest Distribution Depot", "produces": [], "consumes": ["packages", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "bakersfield-ca",
+    "name": "Bakersfield Station",
+    "city": "Bakersfield",
+    "state": "California",
+    "position": [35.3733, -119.0187],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "At the southern end of the great Central Valley, Bakersfield is where the farmland meets the mountains. Oil derricks nod in the distance and cotton fields stretch to the horizon.",
+    "industries": [
+      { "type": "oil_refining", "name": "Kern County Oil Fields", "produces": ["fuel"], "consumes": [], "productionRate": 0.35, "minBatch": 15, "maxBatch": 50 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "baltimore-md",
+    "name": "Penn Station Baltimore",
+    "city": "Baltimore",
+    "state": "Maryland",
+    "position": [39.2904, -76.6122],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Baltimore's grand old station sits right on the busy Northeast Corridor. Crab boats unload at the harbor just a few blocks away, and the sweet smell of Old Bay seasoning drifts through the city streets.",
+    "industries": [
+      { "type": "distribution", "name": "Baltimore Harbor Terminal", "produces": ["packages"], "consumes": ["packages", "produce", "steel"], "productionRate": 0.2, "minBatch": 5, "maxBatch": 20 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "baton-rouge-la",
+    "name": "Baton Rouge Station",
+    "city": "Baton Rouge",
+    "state": "Louisiana",
+    "position": [30.4515, -91.1871],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The capital of Louisiana, where the mighty Mississippi bends and the great chemical plants line the river. Tank cars roll in and out all day, and the air smells like sugarcane and industry.",
+    "industries": [
+      { "type": "chemical_plant", "name": "Mississippi Chemical Works", "produces": ["chemicals"], "consumes": ["fuel"], "productionRate": 0.4, "minBatch": 10, "maxBatch": 40 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "beaumont-tx",
+    "name": "Beaumont Station",
+    "city": "Beaumont",
+    "state": "Texas",
+    "position": [30.0802, -94.1266],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "This is where Texas oil country begins. The famous Spindletop gusher blew right near here, and the refineries have been pumping ever since. Tank cars line up like shiny silver beads on a necklace.",
+    "industries": [
+      { "type": "oil_refining", "name": "Spindletop Refinery", "produces": ["fuel"], "consumes": [], "productionRate": 0.5, "minBatch": 20, "maxBatch": 60 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "cleveland-oh",
+    "name": "Cleveland Union Terminal",
+    "city": "Cleveland",
+    "state": "Ohio",
+    "position": [41.4993, -81.6944],
+    "size": "regional",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "On the shores of Lake Erie, Cleveland's towering Terminal Tower watches over the rails. Steel mills glow along the Cuyahoga River, and ore boats arrive from across the Great Lakes.",
+    "industries": [
+      { "type": "steel_production", "name": "Lake Erie Steel", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.35, "minBatch": 15, "maxBatch": 50 },
+      { "type": "automobile_mfg", "name": "Great Lakes Auto Assembly", "produces": ["automobiles"], "consumes": ["steel"], "productionRate": 0.25, "minBatch": 5, "maxBatch": 15 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "dallas-tx",
+    "name": "Dallas Union Station",
+    "city": "Dallas",
+    "state": "Texas",
+    "position": [32.7767, -96.7970],
+    "size": "major_hub",
+    "trackCount": 10,
+    "architectureStyle": "grand",
+    "description": "Everything is bigger in Texas, and Dallas is no exception. The station is surrounded by gleaming glass towers, but the old brick building still stands proud. Cattle and grain roll south while packages and fuel roll north.",
+    "industries": [
+      { "type": "distribution", "name": "Dallas Freight Terminal", "produces": [], "consumes": ["packages", "grain", "livestock"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "livestock", "name": "Texas Stockyards", "produces": ["livestock"], "consumes": [], "productionRate": 0.25, "minBatch": 20, "maxBatch": 60 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "eugene-or",
+    "name": "Eugene Station",
+    "city": "Eugene",
+    "state": "Oregon",
+    "position": [44.0521, -123.0868],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "Nestled in the Willamette Valley between the Cascades and the Coast Range, Eugene smells like fresh rain and evergreen. Lumber stacks taller than a house wait at the siding for the next train south.",
+    "industries": [
+      { "type": "lumber", "name": "Willamette Lumber Co.", "produces": ["lumber"], "consumes": [], "productionRate": 0.4, "minBatch": 15, "maxBatch": 40 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "flagstaff-az",
+    "name": "Flagstaff Station",
+    "city": "Flagstaff",
+    "state": "Arizona",
+    "position": [35.1983, -111.6513],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "High in the ponderosa pines of northern Arizona, Flagstaff is a cool oasis in the desert. The station sits right on old Route 66, and at night you can see a million stars above the tracks.",
+    "industries": [
+      { "type": "lumber", "name": "Coconino Forest Products", "produces": ["lumber"], "consumes": [], "productionRate": 0.2, "minBatch": 10, "maxBatch": 30 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "fresno-ca",
+    "name": "Fresno Station",
+    "city": "Fresno",
+    "state": "California",
+    "position": [36.7378, -119.7871],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Right in the heart of California's breadbasket. Orchards and vineyards stretch in every direction -- almonds, grapes, peaches, and tomatoes. Refrigerated cars line up by the dozens, ready to carry the harvest east.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "San Joaquin Valley Farms", "produces": ["produce"], "consumes": [], "productionRate": 0.55, "minBatch": 20, "maxBatch": 60 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "gary-in",
+    "name": "Gary Metro Center",
+    "city": "Gary",
+    "state": "Indiana",
+    "position": [41.5934, -87.3465],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "modest",
+    "description": "Just down the shore of Lake Michigan from Chicago, Gary is steel country through and through. The great furnaces glow orange day and night, and the rails beneath the trains were probably forged right here.",
+    "industries": [
+      { "type": "steel_production", "name": "Indiana Steel Works", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.5, "minBatch": 25, "maxBatch": 80 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "glenwood-springs-co",
+    "name": "Glenwood Springs Station",
+    "city": "Glenwood Springs",
+    "state": "Colorado",
+    "position": [39.5506, -107.3248],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "Where the Colorado River carves through red-rock canyons, little Glenwood Springs has hot springs that steam in the mountain air. The tracks hug the canyon walls so close you could reach out and touch the rock.",
+    "industries": [
+      { "type": "distribution", "name": "Mountain Supply Depot", "produces": [], "consumes": ["packages", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "huntington-wv",
+    "name": "Huntington Station",
+    "city": "Huntington",
+    "state": "West Virginia",
+    "position": [38.4137, -82.4452],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "Where the Ohio River bends and the coal barges line up. Huntington is a little river town where the railroad and the river do business side by side. Coal comes down from the mountains and gets loaded onto boats or trains heading north.",
+    "industries": [
+      { "type": "coal_mining", "name": "Ohio River Coal Transfer", "produces": ["coal"], "consumes": [], "productionRate": 0.5, "minBatch": 30, "maxBatch": 100 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "jacksonville-fl",
+    "name": "Jacksonville Terminal",
+    "city": "Jacksonville",
+    "state": "Florida",
+    "position": [30.3322, -81.6557],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "modest",
+    "description": "The gateway to Florida! Jacksonville sits where the St. Johns River meets the Atlantic, and every train heading south to the sunshine must pass through here first. The warm breeze carries the scent of salt water and orange blossoms.",
+    "industries": [
+      { "type": "distribution", "name": "Florida Gateway Distribution", "produces": [], "consumes": ["packages", "automobiles"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "agriculture_produce", "name": "North Florida Citrus", "produces": ["produce"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 35 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "lake-charles-la",
+    "name": "Lake Charles Station",
+    "city": "Lake Charles",
+    "state": "Louisiana",
+    "position": [30.2266, -93.2174],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "A sleepy bayou town where the petrochemical plants shimmer in the heat and egrets wade in the marshes beside the tracks. The sunsets over the lake turn everything gold and purple.",
+    "industries": [
+      { "type": "chemical_plant", "name": "Calcasieu Chemical Plant", "produces": ["chemicals"], "consumes": ["fuel"], "productionRate": 0.35, "minBatch": 10, "maxBatch": 30 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "miami-fl",
+    "name": "Miami Central Station",
+    "city": "Miami",
+    "state": "Florida",
+    "position": [25.7617, -80.1918],
+    "size": "major_hub",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "The very end of the line -- as far south as the rails will take you. Miami is tropical and colorful, with palm trees and warm breezes and cruise ships in the harbor. This is where Florida oranges begin their long journey north.",
+    "industries": [
+      { "type": "distribution", "name": "Port of Miami Distribution", "produces": ["packages"], "consumes": ["packages", "produce", "fuel"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 25 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "new-haven-ct",
+    "name": "New Haven Union Station",
+    "city": "New Haven",
+    "state": "Connecticut",
+    "position": [41.3082, -72.9279],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "A handsome brick station in the heart of a university town. Students with backpacks crowd the platform alongside commuters, and the sharp whistle of Daisy Belle echoes off the ivy-covered walls of the campus nearby.",
+    "industries": [
+      { "type": "distribution", "name": "Connecticut Package Hub", "produces": [], "consumes": ["packages", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "oklahoma-city-ok",
+    "name": "Santa Fe Station",
+    "city": "Oklahoma City",
+    "state": "Oklahoma",
+    "position": [35.4676, -97.5164],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "modest",
+    "description": "Where the wind comes sweeping down the plain -- and so do the grain trains. Oklahoma City sits right in the middle of cattle country, and the old Santa Fe depot still has its red-tile roof and Mission-style arches.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Oklahoma Grain Exchange", "produces": ["grain"], "consumes": [], "productionRate": 0.45, "minBatch": 30, "maxBatch": 120 },
+      { "type": "livestock", "name": "Oklahoma Cattle Yards", "produces": ["livestock"], "consumes": [], "productionRate": 0.3, "minBatch": 20, "maxBatch": 50 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "orlando-fl",
+    "name": "Orlando Station",
+    "city": "Orlando",
+    "state": "Florida",
+    "position": [28.5383, -81.3789],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The land of sunshine and theme parks! Families with suitcases and excited children pour off the trains here every day. The station is bright and cheerful, with big windows that let in the Florida sun.",
+    "industries": [
+      { "type": "distribution", "name": "Central Florida Distribution", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "philadelphia-pa",
+    "name": "30th Street Station",
+    "city": "Philadelphia",
+    "state": "Pennsylvania",
+    "position": [39.9526, -75.1652],
+    "size": "major_hub",
+    "trackCount": 16,
+    "architectureStyle": "grand",
+    "description": "One of the grandest stations on the Northeast Corridor, with towering columns and an enormous waiting hall where footsteps echo like thunder. Philadelphia -- the City of Brotherly Love -- has been a railroad city since the very beginning.",
+    "industries": [
+      { "type": "distribution", "name": "Philadelphia Commerce Center", "produces": ["packages"], "consumes": ["packages", "produce", "fuel", "steel"], "productionRate": 0.15, "minBatch": 5, "maxBatch": 20 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "portsmouth-oh",
+    "name": "Portsmouth Station",
+    "city": "Portsmouth",
+    "state": "Ohio",
+    "position": [38.7318, -82.9977],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "A quiet little town on the Ohio River where the coal trains pause before heading north. The floodwall murals tell the story of the town, and the river rolls on by like it has for a thousand years.",
+    "industries": [
+      { "type": "distribution", "name": "River Town Transfer", "produces": [], "consumes": ["coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "summit-co",
+    "name": "Summit Station",
+    "city": "Summit County",
+    "state": "Colorado",
+    "position": [39.6333, -106.1500],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "The highest point on the line! At over 11,000 feet, the air is thin and cold, and the snow piles higher than the station roof in winter. This is where Iron Mike earns his keep, pushing and pulling trains over the Continental Divide.",
+    "industries": [
+      { "type": "distribution", "name": "High Country Supply", "produces": [], "consumes": ["fuel", "packages"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "tampa-fl",
+    "name": "Tampa Union Station",
+    "city": "Tampa",
+    "state": "Florida",
+    "position": [27.9506, -82.4572],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "modest",
+    "description": "On the warm waters of Tampa Bay, where pelicans dive and dolphins play. The station serves the big port, and phosphate trains roll out to help farmers across the country grow their crops.",
+    "industries": [
+      { "type": "distribution", "name": "Tampa Port Terminal", "produces": ["packages"], "consumes": ["packages", "fuel"], "productionRate": 0.2, "minBatch": 5, "maxBatch": 20 },
+      { "type": "agriculture_produce", "name": "Gulf Coast Produce", "produces": ["produce"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 30 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "toledo-oh",
+    "name": "Toledo Central Union Terminal",
+    "city": "Toledo",
+    "state": "Ohio",
+    "position": [41.6528, -83.5379],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "modest",
+    "description": "At the western tip of Lake Erie, Toledo is the end of the line for the Appalachian coal run. The power plants here burn coal to make electricity for millions of people across the Midwest.",
+    "industries": [
+      { "type": "power_generation", "name": "Lake Erie Power Station", "produces": [], "consumes": ["coal"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "automobile_mfg", "name": "Toledo Auto Glass Works", "produces": ["automobiles"], "consumes": ["steel"], "productionRate": 0.2, "minBatch": 5, "maxBatch": 15 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "wichita-ks",
+    "name": "Wichita Union Station",
+    "city": "Wichita",
+    "state": "Kansas",
+    "position": [37.6872, -97.3301],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Surrounded by wheat fields that shimmer gold in the summer sun, Wichita is where the grain belt begins in earnest. The elevators tower over the flat prairie like silver castles, and the trains line up to fill their hoppers.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Wichita Grain Elevators", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 40, "maxBatch": 150 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "minneapolis-mn",
+    "name": "Minneapolis Union Depot",
+    "city": "Minneapolis",
+    "state": "Minnesota",
+    "position": [44.9778, -93.2650],
+    "size": "major_hub",
+    "trackCount": 10,
+    "architectureStyle": "grand",
+    "description": "The Mill City! Minneapolis straddles the Mississippi River at the great falls where flour mills once ground wheat from across the northern plains. The station is handsome and sturdy, built to withstand winters so cold the rails crack. From here, trains head in every direction -- south to Kansas City, west to Seattle, east to Chicago.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Twin Cities Grain Terminal", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 40, "maxBatch": 160 },
+      { "type": "distribution", "name": "Northern Plains Distribution", "produces": [], "consumes": ["packages", "produce", "lumber"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "milwaukee-wi",
+    "name": "Milwaukee Intermodal Station",
+    "city": "Milwaukee",
+    "state": "Wisconsin",
+    "position": [43.0389, -87.9065],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Cream City, they call it, for the pale brick that builds every beautiful old building. Milwaukee sits on the western shore of Lake Michigan, a city of breweries and factories and hardworking people. The station hums with commuters heading south to Chicago and long-distance travelers heading west to the wide-open prairie.",
+    "industries": [
+      { "type": "distribution", "name": "Milwaukee Package Hub", "produces": [], "consumes": ["packages", "produce", "grain"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "food_processing", "name": "Wisconsin Dairy Co-op", "produces": ["produce"], "consumes": ["grain"], "productionRate": 0.3, "minBatch": 10, "maxBatch": 30 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "omaha-ne",
+    "name": "Omaha Union Station",
+    "city": "Omaha",
+    "state": "Nebraska",
+    "position": [41.2565, -95.9345],
+    "size": "major_hub",
+    "trackCount": 10,
+    "architectureStyle": "grand",
+    "description": "The great gateway to the West! Omaha's Union Station is an art deco palace on the banks of the Missouri River. This is where the Union Pacific Railroad was born, and the city has been a railroad town ever since. Every train heading west from Chicago stops here to take on supplies before the long haul across the plains.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Nebraska Grain Exchange", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 40, "maxBatch": 180 },
+      { "type": "distribution", "name": "Heartland Distribution Center", "produces": [], "consumes": ["packages", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "salt-lake-city-ut",
+    "name": "Salt Lake City Union Station",
+    "city": "Salt Lake City",
+    "state": "Utah",
+    "position": [40.7608, -111.8910],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Nestled beneath the towering Wasatch Mountains, Salt Lake City is the crossroads of the West. The great salt flats stretch westward like a white ocean, and the snow-capped peaks gleam in the clean mountain air. Trains pause here to change crews before tackling the desert or the mountains.",
+    "industries": [
+      { "type": "distribution", "name": "Intermountain Distribution", "produces": [], "consumes": ["packages", "produce", "lumber", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "coal_mining", "name": "Utah Coal Export", "produces": ["coal"], "consumes": [], "productionRate": 0.3, "minBatch": 20, "maxBatch": 80 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "emeryville-ca",
+    "name": "Emeryville Station",
+    "city": "Emeryville",
+    "state": "California",
+    "position": [37.8313, -122.2927],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Just across the bay from San Francisco, Emeryville is where the transcontinental trains end their long journey from the East. Step off the train and you can see the Golden Gate Bridge, the city skyline, and Alcatraz Island all at once. The salt air and fog roll in every afternoon.",
+    "industries": [
+      { "type": "distribution", "name": "Bay Area Distribution", "produces": ["packages"], "consumes": ["packages", "produce", "automobiles"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 25 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "spokane-wa",
+    "name": "Spokane Intermodal Center",
+    "city": "Spokane",
+    "state": "Washington",
+    "position": [47.6588, -117.4260],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The Lilac City, where the Spokane River tumbles over falls right in the middle of downtown. Spokane is the great rail junction of the inland Northwest -- trains from Seattle, Portland, Montana, and Idaho all meet here. The air smells like pine trees and river mist.",
+    "industries": [
+      { "type": "lumber", "name": "Inland Empire Lumber", "produces": ["lumber"], "consumes": [], "productionRate": 0.35, "minBatch": 15, "maxBatch": 45 },
+      { "type": "agriculture_grain", "name": "Palouse Grain Elevator", "produces": ["grain"], "consumes": [], "productionRate": 0.4, "minBatch": 30, "maxBatch": 100 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "glacier-park-mt",
+    "name": "East Glacier Park Station",
+    "city": "East Glacier Park",
+    "state": "Montana",
+    "position": [48.3118, -113.2263],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "rustic",
+    "description": "The most beautiful whistle stop in all of America. The little log station sits at the foot of the Rocky Mountains, where glaciers cling to the peaks and grizzly bears wander the meadows. In summer, hikers with heavy packs step off the train and breathe in the cleanest air you ever did smell.",
+    "industries": [
+      { "type": "distribution", "name": "Glacier Park Supply", "produces": [], "consumes": ["packages", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "fargo-nd",
+    "name": "Fargo Station",
+    "city": "Fargo",
+    "state": "North Dakota",
+    "position": [46.8772, -96.7898],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "On the banks of the Red River, where North Dakota meets Minnesota, Fargo is a tough little railroad town that knows how to handle a blizzard. The grain elevators stand like sentinels on the flat prairie, and the trains carry the harvest of the northern plains to markets far away.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Red River Valley Grain", "produces": ["grain"], "consumes": [], "productionRate": 0.5, "minBatch": 40, "maxBatch": 160 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "atlanta-ga",
+    "name": "Peachtree Station",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "position": [33.7490, -84.3880],
+    "size": "major_hub",
+    "trackCount": 12,
+    "architectureStyle": "grand",
+    "description": "The capital of the New South and the busiest rail junction below the Mason-Dixon line. Atlanta sits at the meeting point of a dozen rail lines, just as it has since the city was founded as a railroad terminus. Peach trees bloom along the avenues in spring, and the sweet Georgia air is warm almost year-round.",
+    "industries": [
+      { "type": "distribution", "name": "Southeast Distribution Hub", "produces": ["packages"], "consumes": ["packages", "automobiles", "produce", "fuel"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 30 },
+      { "type": "automobile_mfg", "name": "Georgia Auto Assembly", "produces": ["automobiles"], "consumes": ["steel"], "productionRate": 0.2, "minBatch": 5, "maxBatch": 15 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "charlotte-nc",
+    "name": "Charlotte Gateway Station",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "position": [35.2271, -80.8431],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The Queen City of the Piedmont, where the rolling red-clay hills of North Carolina meet the foothills of the Blue Ridge. Charlotte is a banking city now, all glass and steel, but the old station still has its charm. Dogwood trees bloom white and pink along the platform in springtime.",
+    "industries": [
+      { "type": "distribution", "name": "Piedmont Distribution Center", "produces": [], "consumes": ["packages", "automobiles", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "nashville-tn",
+    "name": "Nashville Union Station",
+    "city": "Nashville",
+    "state": "Tennessee",
+    "position": [36.1627, -86.7816],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Music City! The sound of guitars and fiddles drifts from the honky-tonks on Broadway, just a few blocks from the grand old Union Station with its Gothic tower and stained glass ceiling. Nashville is where the freight from the Gulf Coast meets the commerce of the upper South.",
+    "industries": [
+      { "type": "distribution", "name": "Tennessee Valley Distribution", "produces": [], "consumes": ["packages", "automobiles", "produce", "chemicals"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "birmingham-al",
+    "name": "Birmingham Terminal Station",
+    "city": "Birmingham",
+    "state": "Alabama",
+    "position": [33.5207, -86.8025],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The Pittsburgh of the South -- built on iron ore, coal, and limestone, the three ingredients for making steel. The great Vulcan statue watches over the city from atop Red Mountain, and the foundries have been forging metal here since before the Civil War. The trains carry steel and iron north, south, east, and west.",
+    "industries": [
+      { "type": "steel_production", "name": "Birmingham Iron Works", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.35, "minBatch": 15, "maxBatch": 50 },
+      { "type": "coal_mining", "name": "Alabama Coal Company", "produces": ["coal"], "consumes": [], "productionRate": 0.4, "minBatch": 20, "maxBatch": 80 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "richmond-va",
+    "name": "Main Street Station",
+    "city": "Richmond",
+    "state": "Virginia",
+    "position": [37.5407, -77.4360],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The capital of the Old Dominion, where the James River flows past cobblestone streets and brick warehouses. Main Street Station is a handsome old building with a clock tower that has been welcoming travelers since 1901. The tobacco warehouses are mostly gone now, but the railroad is busier than ever.",
+    "industries": [
+      { "type": "distribution", "name": "Virginia Distribution Center", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "raleigh-nc",
+    "name": "Raleigh Union Station",
+    "city": "Raleigh",
+    "state": "North Carolina",
+    "position": [35.7796, -78.6382],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The City of Oaks, where tall oak trees shade the streets and the research triangle hums with modern industry. Raleigh's station is new and bright, a sign that the railroad is growing again in the South. Students and researchers and families all share the platform.",
+    "industries": [
+      { "type": "distribution", "name": "Research Triangle Distribution", "produces": ["packages"], "consumes": ["packages", "produce"], "productionRate": 0.15, "minBatch": 5, "maxBatch": 15 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "charleston-sc",
+    "name": "Charleston Amtrak Station",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "position": [32.7765, -79.9311],
+    "size": "regional",
+    "trackCount": 3,
+    "architectureStyle": "grand",
+    "description": "The Holy City, where church steeples rise above pastel-colored houses and the salt breeze blows in from the harbor. Charleston is one of the oldest and most gracious cities in the South. The station is modest, but the city is magnificent -- live oaks draped in Spanish moss, and horse-drawn carriages clip-clopping on cobblestone streets.",
+    "industries": [
+      { "type": "distribution", "name": "Charleston Port Terminal", "produces": ["packages"], "consumes": ["packages", "automobiles"], "productionRate": 0.15, "minBatch": 5, "maxBatch": 20 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "savannah-ga",
+    "name": "Savannah Amtrak Station",
+    "city": "Savannah",
+    "state": "Georgia",
+    "position": [32.0809, -81.0998],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "grand",
+    "description": "Savannah is a city of squares and moss-draped oaks and sweet tea on the veranda. The station sits near the old cotton exchange, reminding everyone that Savannah was once the busiest cotton port in the world. Today the trains carry packages and produce, but the city's charm is unchanged.",
+    "industries": [
+      { "type": "distribution", "name": "Savannah Port Distribution", "produces": ["packages"], "consumes": ["packages", "produce", "chemicals"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 25 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "memphis-tn",
+    "name": "Memphis Central Station",
+    "city": "Memphis",
+    "state": "Tennessee",
+    "position": [35.1495, -90.0490],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Where the blues were born and the Mississippi River rolls wide and muddy below the bluffs. Memphis is a crossroads -- north-south trains cross the river here on the great bridge, and the honk of tugboat horns mixes with the wail of train whistles. Barbecue smoke drifts through the warm evening air.",
+    "industries": [
+      { "type": "distribution", "name": "Memphis Freight Terminal", "produces": [], "consumes": ["packages", "grain", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "agriculture_grain", "name": "Delta Cotton Exchange", "produces": ["grain"], "consumes": [], "productionRate": 0.35, "minBatch": 20, "maxBatch": 80 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "jackson-ms",
+    "name": "Jackson Union Station",
+    "city": "Jackson",
+    "state": "Mississippi",
+    "position": [32.2988, -90.1848],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The capital of Mississippi, a quiet Southern city where magnolia trees bloom white and fragrant. The station is a stopping point on the long run between Chicago and New Orleans, and passengers step out onto the platform to stretch their legs and smell the warm Mississippi air.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "Mississippi Delta Farms", "produces": ["produce"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 35 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "st-louis-mo",
+    "name": "St. Louis Union Station",
+    "city": "St. Louis",
+    "state": "Missouri",
+    "position": [38.6270, -90.1994],
+    "size": "major_hub",
+    "trackCount": 12,
+    "architectureStyle": "grand",
+    "description": "Under the great silver Gateway Arch, St. Louis Union Station was once the largest and busiest train station in the world. The grand hall has stained glass windows and a barrel-vaulted ceiling that takes your breath away. The city straddles the Mississippi River -- the natural highway of America -- and the trains cross the river on bridges that seem to float on air.",
+    "industries": [
+      { "type": "distribution", "name": "Gateway Distribution Center", "produces": [], "consumes": ["packages", "grain", "automobiles", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "automobile_mfg", "name": "St. Louis Auto Plant", "produces": ["automobiles"], "consumes": ["steel"], "productionRate": 0.2, "minBatch": 5, "maxBatch": 15 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "little-rock-ar",
+    "name": "Little Rock Union Station",
+    "city": "Little Rock",
+    "state": "Arkansas",
+    "position": [34.7465, -92.2896],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The natural state's capital sits on the banks of the Arkansas River, where the Ozark foothills flatten into the Mississippi Delta. The station is cozy and welcoming, and the pine-covered hills roll away in every direction. Trains heading south to Texas pause here for water and a crew change.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "Arkansas Valley Farms", "produces": ["produce"], "consumes": [], "productionRate": 0.25, "minBatch": 10, "maxBatch": 30 },
+      { "type": "lumber", "name": "Ozark Timber Company", "produces": ["lumber"], "consumes": [], "productionRate": 0.3, "minBatch": 10, "maxBatch": 35 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "san-antonio-tx",
+    "name": "San Antonio Station",
+    "city": "San Antonio",
+    "state": "Texas",
+    "position": [29.4241, -98.4936],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "Remember the Alamo! San Antonio is a city of history and warmth, where the River Walk sparkles with lights and the missions stand as they have for three hundred years. The station is the southern end of the Texas Eagle route, and passengers arriving from Chicago step out into air that smells like mesquite smoke and wildflowers.",
+    "industries": [
+      { "type": "distribution", "name": "South Texas Distribution", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 },
+      { "type": "livestock", "name": "San Antonio Stockyards", "produces": ["livestock"], "consumes": [], "productionRate": 0.25, "minBatch": 15, "maxBatch": 50 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "el-paso-tx",
+    "name": "El Paso Union Depot",
+    "city": "El Paso",
+    "state": "Texas",
+    "position": [31.7619, -106.4424],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "grand",
+    "description": "Where Texas touches Mexico and the Rio Grande runs thin through the desert. El Paso sits in a gap between two mountain ranges, and the sun sets in colors you will not believe -- orange and purple and gold. The Union Depot is a handsome old building with Mission-style arches, and the trains that stop here carry the commerce of two nations.",
+    "industries": [
+      { "type": "distribution", "name": "Border Commerce Terminal", "produces": ["packages"], "consumes": ["packages", "fuel", "automobiles"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 25 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "tucson-az",
+    "name": "Tucson Station",
+    "city": "Tucson",
+    "state": "Arizona",
+    "position": [32.2226, -110.9747],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "In the heart of the Sonoran Desert, surrounded by saguaro cactus standing like sentinels with their arms raised to the sky. Tucson is old and warm and dusty, with adobe buildings and the smell of creosote after a rare rain. The trains pass through on their way between El Paso and Los Angeles, and the desert stretches endlessly on both sides.",
+    "industries": [
+      { "type": "distribution", "name": "Desert Southwest Distribution", "produces": [], "consumes": ["packages", "fuel", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "cincinnati-oh",
+    "name": "Cincinnati Union Terminal",
+    "city": "Cincinnati",
+    "state": "Ohio",
+    "position": [39.1031, -84.5120],
+    "size": "regional",
+    "trackCount": 8,
+    "architectureStyle": "grand",
+    "description": "One of the finest art deco buildings in the world -- the great half-dome of Cincinnati Union Terminal rises like a sunrise over the Ohio River valley. Inside, the mosaics tell the story of Cincinnati's industries: soap and candles, machine tools and riverboats. The trains cross the Ohio River on high bridges that sway ever so slightly in the wind.",
+    "industries": [
+      { "type": "distribution", "name": "Ohio Valley Distribution", "produces": ["packages"], "consumes": ["packages", "steel", "coal", "produce"], "productionRate": 0.15, "minBatch": 5, "maxBatch": 20 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "buffalo-ny",
+    "name": "Buffalo Exchange Street Station",
+    "city": "Buffalo",
+    "state": "New York",
+    "position": [42.8864, -78.8784],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "grand",
+    "description": "At the eastern end of Lake Erie, Buffalo was once the greatest grain port in the world. The old grain elevators still stand along the waterfront like concrete castles. Niagara Falls thunders just a few miles to the north, and on quiet mornings you can hear the distant roar from the station platform.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Great Lakes Grain Terminal", "produces": ["grain"], "consumes": [], "productionRate": 0.35, "minBatch": 20, "maxBatch": 80 },
+      { "type": "steel_production", "name": "Buffalo Steel Co.", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 30 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "syracuse-ny",
+    "name": "Syracuse Regional Transportation Center",
+    "city": "Syracuse",
+    "state": "New York",
+    "position": [43.0481, -76.1474],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The Salt City, named for the salt springs that drew the first settlers. Syracuse sits in the heart of the Finger Lakes region, surrounded by rolling hills and deep blue lakes. The station is a busy stop on the Water Level Route, where college students and families board the train for New York or Chicago.",
+    "industries": [
+      { "type": "distribution", "name": "Central New York Distribution", "produces": [], "consumes": ["packages", "produce"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "albany-ny",
+    "name": "Albany-Rensselaer Station",
+    "city": "Albany",
+    "state": "New York",
+    "position": [42.6526, -73.7562],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The capital of New York State, where the Mohawk River meets the Hudson. Albany has been a transportation crossroads since the days of the Erie Canal, and the station is the great junction where trains from New York City, Boston, Buffalo, and Montreal all converge. The Hudson River glimmers below the bluffs in every season.",
+    "industries": [
+      { "type": "distribution", "name": "Capital District Distribution", "produces": [], "consumes": ["packages", "produce", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "dodge-city-ks",
+    "name": "Dodge City Station",
+    "city": "Dodge City",
+    "state": "Kansas",
+    "position": [37.7528, -100.0171],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "The wildest town in the Wild West -- or so they used to say. Boot Hill and the Long Branch Saloon are tourist attractions now, but the cattle still roam the shortgrass prairie, and the trains still blow their whistles as they roll through on the old Santa Fe line. The sky is enormous and the sunsets are legendary.",
+    "industries": [
+      { "type": "livestock", "name": "Dodge City Cattle Yards", "produces": ["livestock"], "consumes": [], "productionRate": 0.35, "minBatch": 20, "maxBatch": 60 },
+      { "type": "agriculture_grain", "name": "Western Kansas Wheat Co.", "produces": ["grain"], "consumes": [], "productionRate": 0.4, "minBatch": 30, "maxBatch": 100 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "san-jose-ca",
+    "name": "Diridon Station",
+    "city": "San Jose",
+    "state": "California",
+    "position": [37.3382, -121.8863],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The capital of Silicon Valley, where the future is invented every day. Diridon Station is a handsome old depot surrounded by the glass towers of tech companies. But the trains are the old-fashioned kind -- long and heavy and full of passengers heading up and down the California coast. The orchards that once filled this valley are mostly gone, but the sunshine remains.",
+    "industries": [
+      { "type": "distribution", "name": "Silicon Valley Distribution", "produces": ["packages"], "consumes": ["packages", "produce"], "productionRate": 0.2, "minBatch": 10, "maxBatch": 25 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "santa-barbara-ca",
+    "name": "Santa Barbara Station",
+    "city": "Santa Barbara",
+    "state": "California",
+    "position": [34.4208, -119.6982],
+    "size": "local",
+    "trackCount": 2,
+    "architectureStyle": "grand",
+    "description": "The American Riviera! Santa Barbara's white-stucco station with its red-tile roof sits just a stone's throw from the beach. The mountains rise behind the city and the Pacific stretches blue and endless to the west. Palm trees sway in the ocean breeze, and dolphins play in the surf just beyond the tracks.",
+    "industries": [
+      { "type": "agriculture_produce", "name": "Santa Barbara Wine Country", "produces": ["produce"], "consumes": [], "productionRate": 0.2, "minBatch": 5, "maxBatch": 20 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "lorton-va",
+    "name": "Lorton Auto Train Station",
+    "city": "Lorton",
+    "state": "Virginia",
+    "position": [38.7048, -77.2277],
+    "size": "local",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "A unique station for a unique train. Lorton is the northern terminal of the Auto Train -- the only train in America where families drive their cars right onto the railcars. The parking lot is full of minivans and SUVs waiting to be loaded, and excited children wave goodbye as the train pulls south toward sunny Florida.",
+    "industries": [
+      { "type": "distribution", "name": "Auto Train Loading Facility", "produces": [], "consumes": ["automobiles"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "sanford-fl",
+    "name": "Sanford Auto Train Station",
+    "city": "Sanford",
+    "state": "Florida",
+    "position": [28.8003, -81.2714],
+    "size": "local",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "The sunny southern end of the Auto Train! Families wake up from their overnight journey, collect their cars from the carrier railcars, and drive off into the Florida sunshine. Disney World is just down the road, and the beach is not much farther. The station smells like sunscreen and orange blossoms.",
+    "industries": [
+      { "type": "distribution", "name": "Sanford Auto Train Facility", "produces": [], "consumes": ["automobiles"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "cheyenne-wy",
+    "name": "Cheyenne Depot",
+    "city": "Cheyenne",
+    "state": "Wyoming",
+    "position": [41.1400, -104.8202],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "grand",
+    "description": "The Magic City of the Plains! Cheyenne was born when the railroad arrived in 1867, and it has been a railroad town ever since. The grand old depot has a clock tower and Romanesque arches, and the wind blows so hard across the high plains that the signal flags stand straight out like starched laundry. Cowboys and railroad workers share the platform.",
+    "industries": [
+      { "type": "livestock", "name": "Cheyenne Cattle Exchange", "produces": ["livestock"], "consumes": [], "productionRate": 0.3, "minBatch": 20, "maxBatch": 60 },
+      { "type": "distribution", "name": "High Plains Distribution", "produces": [], "consumes": ["packages", "fuel"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "sheridan-wy",
+    "name": "Sheridan Station",
+    "city": "Sheridan",
+    "state": "Wyoming",
+    "position": [44.7972, -106.9562],
+    "size": "local",
+    "trackCount": 3,
+    "architectureStyle": "rustic",
+    "description": "At the foot of the Bighorn Mountains, Sheridan is a ranching town where cowboys still ride horses and the rodeo is the biggest event of the year. The coal trains from the Powder River Basin roll through here day and night, loaded down with black coal bound for the power plants of the East.",
+    "industries": [
+      { "type": "coal_mining", "name": "Powder River Coal Loading", "produces": ["coal"], "consumes": [], "productionRate": 0.6, "minBatch": 40, "maxBatch": 150 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "gillette-wy",
+    "name": "Gillette Station",
+    "city": "Gillette",
+    "state": "Wyoming",
+    "position": [44.2911, -105.5022],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "modest",
+    "description": "The Energy Capital of the Nation! Gillette sits right in the heart of the Powder River Basin, the largest coal-producing region in America. The open-pit mines stretch for miles in every direction, and the trains that leave here are the longest and heaviest on the entire network -- two hundred cars loaded with black coal, heading south to keep the lights on across the country.",
+    "industries": [
+      { "type": "coal_mining", "name": "Powder River Basin Mines", "produces": ["coal"], "consumes": [], "productionRate": 0.8, "minBatch": 60, "maxBatch": 200 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "alliance-ne",
+    "name": "Alliance Station",
+    "city": "Alliance",
+    "state": "Nebraska",
+    "position": [42.1016, -102.8720],
+    "size": "local",
+    "trackCount": 4,
+    "architectureStyle": "rustic",
+    "description": "A small railroad town on the high plains of western Nebraska, where the coal trains from Wyoming pause for crew changes before continuing south. The famous Carhenge -- a replica of Stonehenge made from old automobiles -- stands just outside town, and the prairie stretches flat and golden to the horizon in every direction.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Sandhills Grain Elevator", "produces": ["grain"], "consumes": [], "productionRate": 0.3, "minBatch": 20, "maxBatch": 70 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "detroit-mi",
+    "name": "Michigan Central Station",
+    "city": "Detroit",
+    "state": "Michigan",
+    "position": [42.3314, -83.0458],
+    "size": "regional",
+    "trackCount": 6,
+    "architectureStyle": "grand",
+    "description": "The Motor City -- where America's automobiles are born! Detroit's grand Michigan Central Station has been lovingly restored, its soaring eighteen-story tower watching over the city that put the world on wheels. The great assembly plants stretch along the River Rouge, and car carriers loaded with shiny new vehicles roll out on the rails every single day. If you like cars, this is the most exciting city in the country.",
+    "industries": [
+      { "type": "automobile_mfg", "name": "Detroit Auto Assembly", "produces": ["automobiles"], "consumes": ["steel"], "productionRate": 0.4, "minBatch": 10, "maxBatch": 30 },
+      { "type": "steel_production", "name": "River Rouge Steel Works", "produces": ["steel"], "consumes": ["coal"], "productionRate": 0.3, "minBatch": 15, "maxBatch": 40 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "roanoke-va",
+    "name": "Roanoke Station",
+    "city": "Roanoke",
+    "state": "Virginia",
+    "position": [37.2710, -79.9414],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "grand",
+    "description": "The Star City of the South, named for the giant illuminated star on Mill Mountain that shines over the Blue Ridge like a beacon. Roanoke is a railroad city through and through -- Norfolk and Western built its headquarters and locomotive shops right here. The Virginia Museum of Transportation keeps the old steam engines polished and proud, and the mountains rise blue and beautiful in every direction.",
+    "industries": [
+      { "type": "distribution", "name": "Blue Ridge Distribution", "produces": [], "consumes": ["packages", "coal", "lumber"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "san-bernardino-ca",
+    "name": "San Bernardino Santa Fe Depot",
+    "city": "San Bernardino",
+    "state": "California",
+    "position": [34.1083, -117.2898],
+    "size": "regional",
+    "trackCount": 5,
+    "architectureStyle": "grand",
+    "description": "At the foot of the San Bernardino Mountains, where mighty Cajon Pass funnels every train from the east down into the Los Angeles basin. The old Santa Fe depot is a handsome Mission Revival building with a red-tile roof. From the platform you can watch the big engines struggle up the steep grade through the pass -- sometimes three or four locomotives all pulling together, their horns echoing off the canyon walls.",
+    "industries": [
+      { "type": "distribution", "name": "Inland Empire Distribution", "produces": [], "consumes": ["packages", "fuel", "automobiles"], "productionRate": 0, "minBatch": 0, "maxBatch": 0 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
+  },
+  {
+    "id": "billings-mt",
+    "name": "Billings Depot",
+    "city": "Billings",
+    "state": "Montana",
+    "position": [45.7833, -108.5007],
+    "size": "regional",
+    "trackCount": 4,
+    "architectureStyle": "modest",
+    "description": "Montana's largest city perches on the rimrocks high above the Yellowstone River, with views stretching to the snow-capped Beartooth Mountains on the horizon. Billings is the heart of cattle and wheat country, and the trains carry grain east to Minneapolis and bring supplies back for the vast ranches. Yellowstone National Park -- the first and greatest of America's national parks -- is just a few hours to the south.",
+    "industries": [
+      { "type": "agriculture_grain", "name": "Yellowstone Valley Grain", "produces": ["grain"], "consumes": [], "productionRate": 0.35, "minBatch": 20, "maxBatch": 60 },
+      { "type": "livestock", "name": "Montana Cattle Co.", "produces": ["livestock"], "consumes": [], "productionRate": 0.25, "minBatch": 15, "maxBatch": 40 }
+    ],
+    "waitingCargo": [],
+    "waitingPassengers": [],
+    "trainsAtStation": []
   }
 ]

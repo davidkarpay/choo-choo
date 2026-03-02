@@ -27,4 +27,8 @@ export interface Station {
   waitingCargo: CargoShipment[];
   waitingPassengers: Passenger[];
   trainsAtStation: string[];
+  /** True if this station appears in 2+ routes (Phase 5). */
+  isJunction?: boolean;
+  /** Route IDs that pass through this station (Phase 5). */
+  connectedRouteIds?: string[];
 }

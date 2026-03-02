@@ -15,7 +15,10 @@
     "maxCars": 80,
     "speedMph": 25,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 0
+    "berthIndex": 0,
+    "operator": "CSX",
+    "category": "freight",
+    "preferredRouteIds": ["appalachian-coal"]
   },
   {
     "id": "daisy-belle",
@@ -33,7 +36,10 @@
     "maxCars": 12,
     "speedMph": 55,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 1
+    "berthIndex": 1,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["northeast-corridor"]
   },
   {
     "id": "iron-mike",
@@ -51,7 +57,10 @@
     "maxCars": 20,
     "speedMph": 15,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 2
+    "berthIndex": 2,
+    "operator": "UP",
+    "category": "freight",
+    "preferredRouteIds": ["mountain-pass", "up-overland"]
   },
   {
     "id": "starlight-express",
@@ -69,7 +78,10 @@
     "maxCars": 40,
     "speedMph": 35,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 3
+    "berthIndex": 3,
+    "operator": "UP",
+    "category": "freight",
+    "preferredRouteIds": ["california-produce"]
   },
   {
     "id": "old-faithful",
@@ -87,7 +99,10 @@
     "maxCars": 60,
     "speedMph": 20,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 4
+    "berthIndex": 4,
+    "operator": "BNSF",
+    "category": "freight",
+    "preferredRouteIds": ["grain-belt"]
   },
   {
     "id": "copper-king",
@@ -105,6 +120,410 @@
     "maxCars": 100,
     "speedMph": 22,
     "homeRoundhouseId": "main-roundhouse",
-    "berthIndex": 5
+    "berthIndex": 5,
+    "operator": "BNSF",
+    "category": "freight",
+    "preferredRouteIds": ["transcon"]
+  },
+
+  {
+    "id": "california-zephyr",
+    "name": "California Zephyr",
+    "type": "steam",
+    "color": {
+      "primary": "#1A5DAD",
+      "secondary": "#C0C0C0",
+      "accent": "#E31837"
+    },
+    "personality": "The California Zephyr is the most scenic train in all of America. She climbs through the Rocky Mountains with her nose held high, winding past red canyons and snow-dusted peaks that make the passengers press their faces to the glass. Her dining car smells of fresh coffee and warm bread, and her conductor has a voice like velvet when he calls the stops. She takes her time -- because the view is the whole point.",
+    "whistleType": "mellow",
+    "whistleSoundFile": "/audio/whistles/mellow-steam-02.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 14,
+    "speedMph": 50,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 0,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-california-zephyr"]
+  },
+  {
+    "id": "empire-builder",
+    "name": "Empire Builder",
+    "type": "steam",
+    "color": {
+      "primary": "#1B3A5C",
+      "secondary": "#F0EDE4",
+      "accent": "#52B848"
+    },
+    "personality": "The Empire Builder follows the old frontier trail across the northern plains, where the sky is so wide it makes you dizzy. He is a rugged, dependable engine who has weathered blizzards in Montana and thunderstorms in North Dakota without once losing his nerve. His passengers wake up to sunrises over wheat fields that stretch clear to the horizon. He carries the spirit of the pioneers in his steam.",
+    "whistleType": "deep",
+    "whistleSoundFile": "/audio/whistles/deep-steam-02.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 14,
+    "speedMph": 50,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 1,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-empire-builder"]
+  },
+  {
+    "id": "southwest-chief",
+    "name": "Southwest Chief",
+    "type": "steam",
+    "color": {
+      "primary": "#E31837",
+      "secondary": "#1A5DAD",
+      "accent": "#F4C542"
+    },
+    "personality": "The Southwest Chief is bold and fast and painted the color of a desert sunset. She races across the great open Southwest, past mesas that glow orange in the afternoon light and through little towns where kids wave from dirt roads. She has a high, bright whistle that echoes off the canyon walls, and her passengers swear the enchiladas in her dining car are the best between Chicago and Los Angeles.",
+    "whistleType": "high",
+    "whistleSoundFile": "/audio/whistles/high-steam-02.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 12,
+    "speedMph": 55,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 2,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-southwest-chief"]
+  },
+  {
+    "id": "coast-starlight",
+    "name": "Coast Starlight",
+    "type": "steam",
+    "color": {
+      "primary": "#4A90D9",
+      "secondary": "#FDF6E3",
+      "accent": "#E8913A"
+    },
+    "personality": "The Coast Starlight hugs the Pacific shore from Seattle to Los Angeles, and there is no lovelier ride in the world. She is a gentle, dreamy engine who likes to take things slow so her passengers can watch the waves crash against the cliffs and the sea otters floating in the kelp. Her observation car has glass windows from floor to ceiling, and on clear days you can see whales. She smells faintly of salt air and eucalyptus.",
+    "whistleType": "mellow",
+    "whistleSoundFile": "/audio/whistles/mellow-steam-03.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 16,
+    "speedMph": 45,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 3,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-coast-starlight"]
+  },
+  {
+    "id": "city-of-nola",
+    "name": "City of New Orleans",
+    "type": "steam",
+    "color": {
+      "primary": "#1A5DAD",
+      "secondary": "#F4C542",
+      "accent": "#FDF6E3"
+    },
+    "personality": "The City of New Orleans runs the storied line from Chicago down through the heartland to the jazz city on the bayou. He has a deep, soulful whistle that sounds like a blues note hanging in the humid night air. His route passes through Memphis and Jackson, and the smell of magnolias drifts in through open windows in summertime. They wrote a song about him once, and he has never forgotten it.",
+    "whistleType": "deep",
+    "whistleSoundFile": "/audio/whistles/deep-steam-03.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 10,
+    "speedMph": 50,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 4,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-city-of-nola"]
+  },
+  {
+    "id": "silver-meteor",
+    "name": "Silver Meteor",
+    "type": "steam",
+    "color": {
+      "primary": "#C0C0C0",
+      "secondary": "#1A5DAD",
+      "accent": "#E31837"
+    },
+    "personality": "The Silver Meteor is sleek and shining, and she streaks down the East Coast like a flash of polished chrome. She runs from New York to Miami, carrying snowbirds south to the sunshine and vacationers north to the city lights. Her silver body catches the sun and throws dazzling reflections across the passing countryside. She is proud of her speed and always arrives with a flourish.",
+    "whistleType": "high",
+    "whistleSoundFile": "/audio/whistles/high-steam-03.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 12,
+    "speedMph": 55,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 5,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-silver-meteor"]
+  },
+  {
+    "id": "lake-shore-ltd",
+    "name": "Lake Shore Limited",
+    "type": "steam",
+    "color": {
+      "primary": "#1B3A5C",
+      "secondary": "#C0C0C0",
+      "accent": "#F4C542"
+    },
+    "personality": "The Lake Shore Limited follows the old water-level route along the Erie Canal and the shores of the Great Lakes, where the land is flat and the running is smooth. He is a steady, thoughtful engine -- not the fastest, but unfailingly reliable. His passengers fall asleep to the gentle rocking of his cars and wake up in a different city. On autumn mornings, the maple trees along his route turn the whole world gold and crimson.",
+    "whistleType": "mellow",
+    "whistleSoundFile": "/audio/whistles/mellow-steam-04.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 10,
+    "speedMph": 50,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 6,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-lake-shore"]
+  },
+  {
+    "id": "the-crescent",
+    "name": "The Crescent",
+    "type": "steam",
+    "color": {
+      "primary": "#2D1B4E",
+      "secondary": "#C0C0C0",
+      "accent": "#F4C542"
+    },
+    "personality": "The Crescent is dressed in deep purple, the color of a Southern twilight. She glides from New York down through the Appalachian foothills and into the warm, mossy heart of Dixie, ending her journey in the city of New Orleans. She has a deep, courteous whistle and a dining car that serves sweet tea and pecan pie. There is something about The Crescent that makes people slow down and remember their manners.",
+    "whistleType": "deep",
+    "whistleSoundFile": "/audio/whistles/deep-steam-04.mp3",
+    "cargoCapability": ["passengers"],
+    "maxCars": 12,
+    "speedMph": 45,
+    "homeRoundhouseId": "roundhouse-passenger",
+    "berthIndex": 7,
+    "operator": "Amtrak",
+    "category": "passenger",
+    "preferredRouteIds": ["amtrak-crescent"]
+  },
+
+  {
+    "id": "thunder-ridge",
+    "name": "Thunder Ridge",
+    "type": "diesel",
+    "color": {
+      "primary": "#E87722",
+      "secondary": "#1A1A2E",
+      "accent": "#F4C542"
+    },
+    "personality": "Thunder Ridge is a coal hauler, plain and simple, and he would not have it any other way. He drags trains of black hopper cars out of the Powder River Basin in Wyoming, where the mines carve great shelves into the earth. His horn shakes the ground when he sounds it, and his diesel engine growls with a low, constant rumble that you can hear coming for miles across the open prairie.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-02.mp3",
+    "cargoCapability": ["coal", "steel"],
+    "maxCars": 90,
+    "speedMph": 30,
+    "homeRoundhouseId": "roundhouse-west",
+    "berthIndex": 0,
+    "operator": "BNSF",
+    "category": "freight",
+    "preferredRouteIds": ["bnsf-powder-river", "bnsf-northern-transcon"]
+  },
+  {
+    "id": "prairie-wind",
+    "name": "Prairie Wind",
+    "type": "diesel",
+    "color": {
+      "primary": "#E87722",
+      "secondary": "#FDF6E3",
+      "accent": "#2D5A3D"
+    },
+    "personality": "Prairie Wind carries the harvest. When the wheat turns gold in Kansas and the corn stands tall in Iowa, Prairie Wind is there with a long line of covered hopper cars, ready to take it all to market. She hums through the flatlands like a song on the breeze, and the farmers wave their hats when they see her coming. She smells of sun-warmed grain and fresh-cut hay.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-03.mp3",
+    "cargoCapability": ["grain", "produce"],
+    "maxCars": 70,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-west",
+    "berthIndex": 1,
+    "operator": "BNSF",
+    "category": "freight",
+    "preferredRouteIds": ["grain-belt", "bnsf-northern-transcon"]
+  },
+  {
+    "id": "steel-river",
+    "name": "Steel River",
+    "type": "diesel",
+    "color": {
+      "primary": "#0033A0",
+      "secondary": "#C0C0C0",
+      "accent": "#F4C542"
+    },
+    "personality": "Steel River hauls the bones of America -- great beams and coils of steel from the foundries of Pittsburgh, and shiny new automobiles fresh off the assembly lines in Detroit. He follows the old water-level route along the Great Lakes, where the factories line the shore and the air tastes of iron and industry. He is strong and no-nonsense, and his blue paint is always spattered with rust-colored dust from his cargo.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-04.mp3",
+    "cargoCapability": ["steel", "automobiles"],
+    "maxCars": 80,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-east",
+    "berthIndex": 0,
+    "operator": "CSX",
+    "category": "freight",
+    "preferredRouteIds": ["csx-water-level", "chicago-hub-east"]
+  },
+  {
+    "id": "night-owl",
+    "name": "Night Owl",
+    "type": "diesel",
+    "color": {
+      "primary": "#00274C",
+      "secondary": "#F4C542",
+      "accent": "#C0C0C0"
+    },
+    "personality": "Night Owl does his best work after dark. He is the longest intermodal train on the Union Pacific, hauling double-stacked containers and auto racks across the Great Plains while the rest of the world sleeps. His twin headlamps cut through the darkness like owl eyes, and his horn has a low, mournful sound that carries for miles through the quiet night. He does not mind being alone out there. He likes the stars.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-05.mp3",
+    "cargoCapability": ["packages", "automobiles", "fuel"],
+    "maxCars": 100,
+    "speedMph": 40,
+    "homeRoundhouseId": "roundhouse-west",
+    "berthIndex": 2,
+    "operator": "UP",
+    "category": "freight",
+    "preferredRouteIds": ["up-overland", "up-i5-corridor"]
+  },
+  {
+    "id": "iron-horse",
+    "name": "Iron Horse",
+    "type": "diesel",
+    "color": {
+      "primary": "#52B848",
+      "secondary": "#1A1A2E",
+      "accent": "#C0C0C0"
+    },
+    "personality": "Iron Horse is a true workhorse of the eastern railroads. He can carry just about anything -- coal, steel, lumber, packages -- and he does, day after day, through the green hills and river valleys of Virginia and the Carolinas. His Norfolk Southern green paint blends into the forest as he winds through the Appalachian hollows. He is quiet and dependable, the kind of engine the others count on when the going gets tough.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-06.mp3",
+    "cargoCapability": ["coal", "steel", "packages", "lumber"],
+    "maxCars": 75,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-east",
+    "berthIndex": 1,
+    "operator": "NS",
+    "category": "freight",
+    "preferredRouteIds": ["ns-crescent-corridor", "ns-pittsburgh-line"]
+  },
+  {
+    "id": "gulf-runner",
+    "name": "Gulf Runner",
+    "type": "diesel",
+    "color": {
+      "primary": "#00274C",
+      "secondary": "#F4C542",
+      "accent": "#E31837"
+    },
+    "personality": "Gulf Runner hauls fuel and chemicals along the Sunset Route, from the refineries of Houston to the ports of Los Angeles. His tanker cars gleam like a string of silver beads in the Texas sun. He runs through desert country where the heat shimmers on the rails and the only shade comes from the occasional mesa. He is careful and steady -- when you carry what Gulf Runner carries, you do not take chances.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-07.mp3",
+    "cargoCapability": ["fuel", "chemicals"],
+    "maxCars": 85,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-west",
+    "berthIndex": 3,
+    "operator": "UP",
+    "category": "freight",
+    "preferredRouteIds": ["up-sunset", "sunset-route"]
+  },
+  {
+    "id": "timber-jack",
+    "name": "Timber Jack",
+    "type": "diesel",
+    "color": {
+      "primary": "#E87722",
+      "secondary": "#2D5A3D",
+      "accent": "#3E2F1C"
+    },
+    "personality": "Timber Jack smells like a forest. He hauls fresh-cut lumber down from the Pacific Northwest on open flatcars, and the scent of pine and cedar follows him like a perfume wherever he goes. He is a smaller engine, built for the winding mountain routes where the trees grow thick and the bridges are narrow. When he rumbles through a little mountain town, people open their windows just to breathe in that good wood smell.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-08.mp3",
+    "cargoCapability": ["lumber"],
+    "maxCars": 60,
+    "speedMph": 30,
+    "homeRoundhouseId": "roundhouse-west",
+    "berthIndex": 4,
+    "operator": "BNSF",
+    "category": "freight",
+    "preferredRouteIds": ["pacific-lumber", "bnsf-northern-transcon"]
+  },
+  {
+    "id": "coal-dust",
+    "name": "Coal Dust",
+    "type": "diesel",
+    "color": {
+      "primary": "#52B848",
+      "secondary": "#2E2E38",
+      "accent": "#8C8C8C"
+    },
+    "personality": "Coal Dust is the slowest train in the fleet, and he does not care one bit. He hauls the heaviest loads -- a hundred open hopper cars brimming with coal from the Appalachian mines -- and he does it with the patience of a mountain. His wheels grind and his engine groans on the steep grades, but he never stops. By the time he reaches the power plant, there is a fine layer of black dust on everything, including Coal Dust himself.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-09.mp3",
+    "cargoCapability": ["coal"],
+    "maxCars": 100,
+    "speedMph": 25,
+    "homeRoundhouseId": "roundhouse-east",
+    "berthIndex": 2,
+    "operator": "NS",
+    "category": "freight",
+    "preferredRouteIds": ["appalachian-coal", "ns-pittsburgh-line"]
+  },
+  {
+    "id": "fast-stack",
+    "name": "Fast Stack",
+    "type": "diesel",
+    "color": {
+      "primary": "#00274C",
+      "secondary": "#F4C542",
+      "accent": "#D64045"
+    },
+    "personality": "Fast Stack is the speedster of the freight world. He pulls double-stacked intermodal containers and auto racks clear across the country, and he does it faster than anyone else on the rails. His train is so long it stretches out of sight around the bend, yet he moves with a swift, confident rhythm. The dispatchers always clear the track when they see Fast Stack coming -- everybody knows he has somewhere to be.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-10.mp3",
+    "cargoCapability": ["packages", "automobiles"],
+    "maxCars": 120,
+    "speedMph": 45,
+    "homeRoundhouseId": "roundhouse-chicago",
+    "berthIndex": 0,
+    "operator": "UP",
+    "category": "freight",
+    "preferredRouteIds": ["up-overland", "transcon"]
+  },
+  {
+    "id": "dixie-flyer",
+    "name": "Dixie Flyer",
+    "type": "diesel",
+    "color": {
+      "primary": "#0033A0",
+      "secondary": "#FDF6E3",
+      "accent": "#E31837"
+    },
+    "personality": "Dixie Flyer works the warm southern routes, hauling fresh produce from Florida, packages from Atlanta, and fuel from the Gulf Coast refineries. She rolls through pine forests and past cotton fields, and her horn has a friendly, two-tone sound that the folks in little southern towns listen for every afternoon. She is cheerful and hardworking, and she always seems to have a bit of red Georgia clay on her wheels.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-11.mp3",
+    "cargoCapability": ["produce", "packages", "fuel"],
+    "maxCars": 70,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-east",
+    "berthIndex": 3,
+    "operator": "CSX",
+    "category": "freight",
+    "preferredRouteIds": ["csx-southeast", "florida-corridor"]
+  },
+  {
+    "id": "northern-star",
+    "name": "Northern Star",
+    "type": "diesel",
+    "color": {
+      "primary": "#E31837",
+      "secondary": "#1A1A2E",
+      "accent": "#C0C0C0"
+    },
+    "personality": "Northern Star comes down from Canada, painted the bright red of the Canadian National railway, hauling grain and lumber and packages across the border and into the American heartland. He is a big, powerful engine built for cold weather -- his cab is warm and snug, and his crew drinks hot cocoa on winter runs. When the snow piles up on the northern plains, Northern Star just lowers his plow and pushes right through.",
+    "whistleType": "horn",
+    "whistleSoundFile": "/audio/horns/diesel-horn-12.mp3",
+    "cargoCapability": ["grain", "lumber", "packages"],
+    "maxCars": 80,
+    "speedMph": 35,
+    "homeRoundhouseId": "roundhouse-chicago",
+    "berthIndex": 1,
+    "operator": "CN",
+    "category": "freight",
+    "preferredRouteIds": ["bnsf-northern-transcon"]
   }
 ]

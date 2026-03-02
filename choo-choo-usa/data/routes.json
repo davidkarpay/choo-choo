@@ -7,6 +7,8 @@
     "lengthMiles": 380,
     "primaryCargoTypes": ["coal", "steel"],
     "color": "#2E2E38",
+    "operator": "CSX",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -26,6 +28,8 @@
     "lengthMiles": 457,
     "primaryCargoTypes": ["passengers", "packages"],
     "color": "#5B98B5",
+    "operator": "Amtrak",
+    "type": "passenger",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -46,6 +50,8 @@
     "lengthMiles": 850,
     "primaryCargoTypes": ["grain", "produce", "livestock"],
     "color": "#D4A843",
+    "operator": "BNSF",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -61,10 +67,12 @@
     "id": "transcon",
     "name": "Transcontinental Main",
     "description": "The great Transcontinental -- Chicago to Los Angeles. This is the longest and busiest freight corridor in the country. Copper King hauls his mile-long train across the plains, over the Rockies, through the desert, and into the golden sunshine of California. It takes three full days.",
-    "stationIds": ["chicago-il", "kansas-city-mo", "denver-co", "albuquerque-nm", "flagstaff-az", "los-angeles-ca"],
+    "stationIds": ["chicago-il", "kansas-city-mo", "denver-co", "albuquerque-nm", "flagstaff-az", "san-bernardino-ca", "los-angeles-ca"],
     "lengthMiles": 2200,
     "primaryCargoTypes": ["fuel", "automobiles", "packages", "chemicals"],
     "color": "#E8913A",
+    "operator": "BNSF",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -73,6 +81,7 @@
         [-104.9903, 39.7392],
         [-106.6504, 35.0844],
         [-111.6513, 35.1983],
+        [-117.2898, 34.1083],
         [-118.2437, 34.0522]
       ]
     }
@@ -85,6 +94,8 @@
     "lengthMiles": 400,
     "primaryCargoTypes": ["produce"],
     "color": "#2D5A3D",
+    "operator": "UP",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -99,15 +110,18 @@
     "id": "chicago-hub-east",
     "name": "Chicago Eastern Gateway",
     "description": "Chicago is the great crossroads -- more rail lines meet here than anywhere else in America. This eastern route connects the Chicago hub to the industrial cities of the Great Lakes and on to New York.",
-    "stationIds": ["chicago-il", "gary-in", "cleveland-oh", "pittsburgh-pa", "new-york-ny"],
+    "stationIds": ["chicago-il", "gary-in", "detroit-mi", "cleveland-oh", "pittsburgh-pa", "new-york-ny"],
     "lengthMiles": 790,
     "primaryCargoTypes": ["steel", "automobiles", "packages"],
     "color": "#8C8C8C",
+    "operator": "CSX",
+    "type": "mixed",
     "geometry": {
       "type": "LineString",
       "coordinates": [
         [-87.6298, 41.8781],
         [-87.3465, 41.5934],
+        [-83.0458, 42.3314],
         [-81.6944, 41.4993],
         [-79.9959, 40.4406],
         [-73.9857, 40.7484]
@@ -122,6 +136,8 @@
     "lengthMiles": 160,
     "primaryCargoTypes": ["coal", "fuel", "packages"],
     "color": "#D64045",
+    "operator": "UP",
+    "type": "mixed",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -139,6 +155,8 @@
     "lengthMiles": 365,
     "primaryCargoTypes": ["fuel", "chemicals"],
     "color": "#C45B3E",
+    "operator": "UP",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -158,6 +176,8 @@
     "lengthMiles": 450,
     "primaryCargoTypes": ["produce", "passengers"],
     "color": "#F4C542",
+    "operator": "CSX",
+    "type": "mixed",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -177,6 +197,8 @@
     "lengthMiles": 750,
     "primaryCargoTypes": ["lumber"],
     "color": "#3E2F1C",
+    "operator": "BNSF",
+    "type": "freight",
     "geometry": {
       "type": "LineString",
       "coordinates": [
@@ -184,6 +206,644 @@
         [-122.6765, 45.5152],
         [-123.0868, 44.0521],
         [-121.4944, 38.5816]
+      ]
+    }
+  },
+  {
+    "id": "bnsf-northern-transcon",
+    "name": "Northern Transcontinental",
+    "description": "The great northern route -- Chicago to Seattle across the top of America. This line follows the path of the old Empire Builder through the wheat fields of Minnesota, across the vast Montana prairie, past the towering peaks of Glacier National Park, and down through the apple orchards of Washington. In winter, the snow drifts pile so high the plows run day and night.",
+    "stationIds": ["chicago-il", "milwaukee-wi", "minneapolis-mn", "fargo-nd", "billings-mt", "glacier-park-mt", "spokane-wa", "seattle-wa"],
+    "lengthMiles": 2206,
+    "primaryCargoTypes": ["grain", "packages", "lumber", "automobiles"],
+    "color": "#E87722",
+    "operator": "BNSF",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-87.9065, 43.0389],
+        [-93.2650, 44.9778],
+        [-96.7898, 46.8772],
+        [-104.0, 47.5],
+        [-108.5007, 45.7833],
+        [-109.5, 47.9],
+        [-113.2263, 48.3118],
+        [-115.5, 47.7],
+        [-117.4260, 47.6588],
+        [-120.5, 47.4],
+        [-122.3321, 47.6062]
+      ]
+    }
+  },
+  {
+    "id": "up-overland",
+    "name": "Overland Route",
+    "description": "The original transcontinental path -- the same route the golden spike connected in 1869. From Chicago the rails stretch west across Iowa and Nebraska, over the high plains of Wyoming, through the echoing canyons of Utah, and across the salt flats and Sierra Nevada to the San Francisco Bay. This is the route that stitched America together.",
+    "stationIds": ["chicago-il", "omaha-ne", "cheyenne-wy", "salt-lake-city-ut", "emeryville-ca"],
+    "lengthMiles": 1870,
+    "primaryCargoTypes": ["packages", "automobiles", "chemicals", "fuel"],
+    "color": "#00274C",
+    "operator": "UP",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-89.6, 41.5],
+        [-91.5, 41.5],
+        [-95.9345, 41.2565],
+        [-100.0, 41.1],
+        [-104.8202, 41.1400],
+        [-107.2, 41.3],
+        [-109.2, 41.2],
+        [-110.9, 40.9],
+        [-111.8910, 40.7608],
+        [-114.0, 40.8],
+        [-117.2, 40.0],
+        [-119.8, 39.5],
+        [-121.3, 38.7],
+        [-122.2927, 37.8313]
+      ]
+    }
+  },
+  {
+    "id": "up-sunset",
+    "name": "Sunset Limited Line",
+    "description": "From the Pacific shores of Los Angeles to the jazzy streets of New Orleans, the Sunset Limited Line crosses the great American Southwest. It rolls through the saguaro cactus forests of Arizona, the wide-open desert of west Texas where the stars seem close enough to touch, past the cattle ranches and oil fields, and through the bayou country of Louisiana. The sunsets along this route are the finest in all the land.",
+    "stationIds": ["los-angeles-ca", "tucson-az", "el-paso-tx", "san-antonio-tx", "houston-tx", "new-orleans-la"],
+    "lengthMiles": 2035,
+    "primaryCargoTypes": ["fuel", "chemicals", "packages", "automobiles"],
+    "color": "#00274C",
+    "operator": "UP",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-118.2437, 34.0522],
+        [-116.5, 33.9],
+        [-114.6, 32.7],
+        [-110.9747, 32.2226],
+        [-109.0, 32.0],
+        [-106.4424, 31.7619],
+        [-104.0, 30.9],
+        [-101.5, 30.3],
+        [-100.4, 29.9],
+        [-98.4936, 29.4241],
+        [-97.0, 29.8],
+        [-95.3698, 29.7604],
+        [-94.1266, 30.0802],
+        [-93.2174, 30.2266],
+        [-91.1871, 30.4515],
+        [-90.0715, 29.9511]
+      ]
+    }
+  },
+  {
+    "id": "csx-water-level",
+    "name": "Water Level Route",
+    "description": "The gentlest path from New York to Chicago -- no mountain passes, no steep grades, just a smooth ride along the rivers and lakeshores. The tracks follow the Hudson River north to Albany, then turn west along the Erie Canal route past Syracuse and Buffalo, hugging the shore of Lake Erie through Cleveland, and rolling into Chicago. The water is never far from view.",
+    "stationIds": ["new-york-ny", "albany-ny", "syracuse-ny", "buffalo-ny", "cleveland-oh", "chicago-il"],
+    "lengthMiles": 960,
+    "primaryCargoTypes": ["packages", "automobiles", "steel", "chemicals"],
+    "color": "#0033A0",
+    "operator": "CSX",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-73.7562, 42.6526],
+        [-75.5, 43.0],
+        [-76.1474, 43.0481],
+        [-77.6, 43.2],
+        [-78.8784, 42.8864],
+        [-79.9, 42.1],
+        [-81.6944, 41.4993],
+        [-83.5, 41.6],
+        [-85.0, 41.7],
+        [-87.6298, 41.8781]
+      ]
+    }
+  },
+  {
+    "id": "ns-crescent-corridor",
+    "name": "Crescent Corridor",
+    "description": "A great arc through the heart of the South -- from the marble monuments of Washington down through the red-clay hills of Virginia and the Carolinas, past the peach orchards of Georgia, through the iron city of Birmingham, and into the crescent-shaped embrace of New Orleans. The crickets sing along the tracks on warm summer nights, and the honeysuckle smells sweet as sugar.",
+    "stationIds": ["washington-dc", "charlotte-nc", "atlanta-ga", "birmingham-al", "new-orleans-la"],
+    "lengthMiles": 1090,
+    "primaryCargoTypes": ["packages", "automobiles", "coal", "chemicals"],
+    "color": "#52B848",
+    "operator": "NS",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-77.0369, 38.9072],
+        [-77.5, 38.3],
+        [-78.5, 37.5],
+        [-79.4, 37.3],
+        [-80.0, 36.1],
+        [-80.4, 35.6],
+        [-80.8431, 35.2271],
+        [-82.3, 34.8],
+        [-83.3, 34.1],
+        [-84.3880, 33.7490],
+        [-85.5, 33.5],
+        [-86.8025, 33.5207],
+        [-87.8, 33.1],
+        [-88.7, 32.4],
+        [-89.3, 31.3],
+        [-90.0715, 29.9511]
+      ]
+    }
+  },
+  {
+    "id": "ns-pittsburgh-line",
+    "name": "Pittsburgh Mainline",
+    "description": "Straight through the industrial heartland -- New York to Chicago by way of Pittsburgh. The tracks cut through the folded ridges of the Appalachians, past the glowing steel mills of the Monongahela Valley, across the flat farmland of Indiana, and into the great Chicago rail yard. This is a workhorse route, and the trains that run it are serious about their business.",
+    "stationIds": ["new-york-ny", "pittsburgh-pa", "chicago-il"],
+    "lengthMiles": 820,
+    "primaryCargoTypes": ["packages", "steel", "automobiles"],
+    "color": "#52B848",
+    "operator": "NS",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-74.2, 40.7],
+        [-75.1, 40.6],
+        [-76.0, 40.5],
+        [-77.5, 40.5],
+        [-79.9959, 40.4406],
+        [-81.5, 40.8],
+        [-83.5, 41.1],
+        [-85.0, 41.1],
+        [-87.6298, 41.8781]
+      ]
+    }
+  },
+  {
+    "id": "bnsf-powder-river",
+    "name": "Powder River Coal Line",
+    "description": "The biggest coal trains in the world begin their journey here, in the Powder River Basin of Wyoming. The open-pit mines are so vast they look like canyons carved by giants. Trains a mile and a half long -- loaded with two hundred cars of black coal -- crawl out of the basin and head south across the plains to the power plants of the Midwest. This single corridor moves more tonnage than any other in America.",
+    "stationIds": ["gillette-wy", "sheridan-wy", "alliance-ne", "kansas-city-mo"],
+    "lengthMiles": 870,
+    "primaryCargoTypes": ["coal"],
+    "color": "#E87722",
+    "operator": "BNSF",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-105.5022, 44.2911],
+        [-106.9562, 44.7972],
+        [-105.0, 43.0],
+        [-102.8720, 42.1016],
+        [-101.0, 41.1],
+        [-99.0, 40.5],
+        [-97.0, 40.0],
+        [-95.5, 39.5],
+        [-94.5786, 39.0997]
+      ]
+    }
+  },
+  {
+    "id": "up-i5-corridor",
+    "name": "Pacific Coast Corridor",
+    "description": "The long haul up the spine of the West Coast -- from the sunny sprawl of Los Angeles, over the Tehachapi Mountains where trains spiral through a famous loop, through the green farmland of the Central Valley, past the towering redwoods of northern California, and into the rain-washed cities of Oregon. The scenery changes more on this route than on almost any other.",
+    "stationIds": ["los-angeles-ca", "bakersfield-ca", "fresno-ca", "sacramento-ca", "portland-or"],
+    "lengthMiles": 1060,
+    "primaryCargoTypes": ["produce", "packages", "fuel", "lumber"],
+    "color": "#00274C",
+    "operator": "UP",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-118.2437, 34.0522],
+        [-118.7, 34.8],
+        [-119.0187, 35.3733],
+        [-119.7871, 36.7378],
+        [-120.5, 37.6],
+        [-121.4944, 38.5816],
+        [-122.2, 40.0],
+        [-122.5, 41.5],
+        [-122.7, 43.0],
+        [-122.6, 44.0],
+        [-122.6765, 45.5152]
+      ]
+    }
+  },
+  {
+    "id": "csx-southeast",
+    "name": "Southeast Gateway",
+    "description": "From the warm breezes of Jacksonville through the live oaks and Spanish moss of Savannah, up to the bustling crossroads of Atlanta, and on to the music city of Nashville. This corridor carries the goods that keep the South humming -- packages from the ports, fresh produce from Florida, and automobiles bound for every dealership from the Appalachians to the Gulf.",
+    "stationIds": ["jacksonville-fl", "savannah-ga", "atlanta-ga", "nashville-tn"],
+    "lengthMiles": 690,
+    "primaryCargoTypes": ["packages", "automobiles", "produce", "chemicals"],
+    "color": "#0033A0",
+    "operator": "CSX",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-81.6557, 30.3322],
+        [-81.0998, 32.0809],
+        [-82.0, 32.8],
+        [-83.5, 33.2],
+        [-84.3880, 33.7490],
+        [-85.2, 34.3],
+        [-86.1, 35.0],
+        [-86.7816, 36.1627]
+      ]
+    }
+  },
+  {
+    "id": "ns-piedmont",
+    "name": "Piedmont Mainline",
+    "description": "Through the rolling Piedmont hills of Virginia and the Carolinas, this line connects the capital to the Queen City and on to Atlanta. The dogwoods bloom white and pink along the right-of-way in spring, and in autumn the hardwood forests blaze with color. It is one of the prettiest freight runs in the whole country.",
+    "stationIds": ["washington-dc", "richmond-va", "roanoke-va", "raleigh-nc", "charlotte-nc", "atlanta-ga"],
+    "lengthMiles": 640,
+    "primaryCargoTypes": ["packages", "automobiles", "steel", "produce"],
+    "color": "#52B848",
+    "operator": "NS",
+    "type": "freight",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-77.0369, 38.9072],
+        [-77.4360, 37.5407],
+        [-79.9414, 37.2710],
+        [-78.6382, 35.7796],
+        [-79.5, 35.5],
+        [-80.8431, 35.2271],
+        [-81.5, 34.9],
+        [-82.5, 34.5],
+        [-83.5, 34.0],
+        [-84.3880, 33.7490]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-california-zephyr",
+    "name": "California Zephyr",
+    "description": "The most beautiful train ride in America -- that is what they say, and they are right. The Zephyr leaves Chicago and heads west across the cornfields of Iowa, through the broad Platte River valley of Nebraska, and up into the Rocky Mountains. Then comes the part everyone waits for: the passage through the Colorado Rockies, along canyons so deep the sun only reaches the bottom at noon, past frozen waterfalls and snow-capped peaks. The train emerges into the red-rock desert of Utah, crosses the salt flats, and climbs over the Sierra Nevada before descending to the shores of San Francisco Bay.",
+    "stationIds": ["chicago-il", "omaha-ne", "denver-co", "glenwood-springs-co", "salt-lake-city-ut", "emeryville-ca"],
+    "lengthMiles": 2438,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-89.5, 41.5],
+        [-91.5, 41.5],
+        [-93.6, 41.6],
+        [-95.9345, 41.2565],
+        [-99.0, 40.8],
+        [-102.0, 40.6],
+        [-104.9903, 39.7392],
+        [-105.5, 39.6],
+        [-106.1500, 39.6333],
+        [-107.3248, 39.5506],
+        [-108.5, 39.4],
+        [-110.0, 39.6],
+        [-111.8910, 40.7608],
+        [-114.5, 40.8],
+        [-117.0, 40.0],
+        [-120.0, 39.3],
+        [-121.5, 38.6],
+        [-122.2927, 37.8313]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-empire-builder",
+    "name": "Empire Builder",
+    "description": "Named for the great railroad tycoon James J. Hill, the Empire Builder is the northernmost long-distance train in America. It departs Chicago and follows the Mississippi River north through Wisconsin, crosses the wheat-golden prairies of Minnesota and North Dakota, then enters the wild open country of Montana -- where the sky is so big it makes you dizzy. The highlight is Glacier National Park, where the train curves along the edge of mountains so steep and beautiful that passengers press their noses to the glass and forget to breathe.",
+    "stationIds": ["chicago-il", "milwaukee-wi", "minneapolis-mn", "fargo-nd", "billings-mt", "glacier-park-mt", "spokane-wa", "seattle-wa"],
+    "lengthMiles": 2206,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-87.9065, 43.0389],
+        [-90.5, 43.8],
+        [-93.2650, 44.9778],
+        [-96.7898, 46.8772],
+        [-100.8, 47.5],
+        [-104.0, 47.5],
+        [-108.5007, 45.7833],
+        [-110.5, 48.2],
+        [-113.2263, 48.3118],
+        [-115.5, 47.7],
+        [-117.4260, 47.6588],
+        [-120.5, 47.4],
+        [-122.3321, 47.6062]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-southwest-chief",
+    "name": "Southwest Chief",
+    "description": "Follow the path of the old Santa Fe Trail from Chicago to Los Angeles! The Southwest Chief rolls across the wide Kansas prairie -- where Dodge City still feels like the Wild West -- then climbs over Raton Pass into the enchanted land of New Mexico. The adobe towns and turquoise sky are like nowhere else in America. Past Albuquerque the train enters the Painted Desert, stops at Flagstaff under the pine trees, then descends through the Mojave to the Pacific.",
+    "stationIds": ["chicago-il", "kansas-city-mo", "dodge-city-ks", "albuquerque-nm", "flagstaff-az", "san-bernardino-ca", "los-angeles-ca"],
+    "lengthMiles": 2256,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-89.5, 40.5],
+        [-91.5, 39.8],
+        [-94.5786, 39.0997],
+        [-97.0, 38.3],
+        [-100.0171, 37.7528],
+        [-102.5, 37.0],
+        [-104.6, 36.5],
+        [-105.5, 35.7],
+        [-106.6504, 35.0844],
+        [-108.5, 35.5],
+        [-110.0, 35.3],
+        [-111.6513, 35.1983],
+        [-113.0, 35.0],
+        [-115.0, 34.9],
+        [-117.2898, 34.1083],
+        [-118.2437, 34.0522]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-coast-starlight",
+    "name": "Coast Starlight",
+    "description": "The most scenic passenger train on the West Coast runs from Seattle to Los Angeles along the Pacific shore. The route passes through the misty forests of Washington, the green river valleys of Oregon, the volcanic peaks of the Cascades, the golden hills of California wine country, and the sparkling coast where the mountains meet the sea. On clear days you can see whales spouting from the observation car.",
+    "stationIds": ["seattle-wa", "portland-or", "sacramento-ca", "san-jose-ca", "santa-barbara-ca", "los-angeles-ca"],
+    "lengthMiles": 1377,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-122.3321, 47.6062],
+        [-122.5, 46.0],
+        [-122.6765, 45.5152],
+        [-123.0, 44.5],
+        [-123.0868, 44.0521],
+        [-122.5, 42.3],
+        [-122.3, 40.6],
+        [-121.4944, 38.5816],
+        [-121.8863, 37.3382],
+        [-121.5, 36.6],
+        [-120.6, 35.4],
+        [-119.6982, 34.4208],
+        [-119.2, 34.3],
+        [-118.2437, 34.0522]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-city-of-nola",
+    "name": "City of New Orleans",
+    "description": "Good morning, America, how are you? This famous train runs straight south from Chicago to New Orleans, following the Illinois Central line through the flat farmland of Illinois, across the wide Mississippi at Memphis, through the cotton fields and catfish ponds of Mississippi, and into the Crescent City where the jazz never stops. The dining car serves po'boys as the train crosses into Louisiana.",
+    "stationIds": ["chicago-il", "memphis-tn", "jackson-ms", "new-orleans-la"],
+    "lengthMiles": 934,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-88.0, 40.5],
+        [-88.5, 39.8],
+        [-89.0, 38.5],
+        [-89.2, 37.8],
+        [-89.5, 36.6],
+        [-90.0490, 35.1495],
+        [-90.2, 34.2],
+        [-90.1848, 32.2988],
+        [-90.3, 31.3],
+        [-90.1, 30.5],
+        [-90.0715, 29.9511]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-silver-meteor",
+    "name": "Silver Meteor",
+    "description": "The Silver Meteor carries snowbirds and sun-chasers from the gray skies of New York all the way to the warm palm trees of Miami. It slips through the capital, past the battlefields of Virginia, through the tobacco country of the Carolinas, pauses in the gracious old city of Charleston where the church bells ring, rolls through Savannah with its mossy oaks, enters Florida at Jacksonville, and races south along the coast to Miami. By the time you arrive, you have traded your winter coat for sunglasses.",
+    "stationIds": ["new-york-ny", "washington-dc", "richmond-va", "raleigh-nc", "charleston-sc", "savannah-ga", "jacksonville-fl", "miami-fl"],
+    "lengthMiles": 1389,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-74.4, 40.5],
+        [-75.1652, 39.9526],
+        [-76.6122, 39.2904],
+        [-77.0369, 38.9072],
+        [-77.4360, 37.5407],
+        [-78.1, 36.6],
+        [-78.6382, 35.7796],
+        [-79.1, 34.8],
+        [-79.5, 34.0],
+        [-79.9311, 32.7765],
+        [-80.8, 32.1],
+        [-81.0998, 32.0809],
+        [-81.6557, 30.3322],
+        [-81.3, 29.2],
+        [-80.6, 27.8],
+        [-80.0534, 26.7153],
+        [-80.1918, 25.7617]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-lake-shore",
+    "name": "Lake Shore Limited",
+    "description": "The Lake Shore Limited follows the historic Water Level Route -- the flattest, smoothest path between New York and Chicago. The train glides up the Hudson River Valley (the views are magnificent at sunset), turns west at Albany, passes through the heart of the Finger Lakes and the college town of Syracuse, pauses at the thundering falls of Niagara, then hugs the shore of Lake Erie all the way to Toledo before making the final dash across Indiana into Chicago.",
+    "stationIds": ["new-york-ny", "albany-ny", "syracuse-ny", "buffalo-ny", "cleveland-oh", "toledo-oh", "chicago-il"],
+    "lengthMiles": 959,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-73.7562, 42.6526],
+        [-75.5, 43.0],
+        [-76.1474, 43.0481],
+        [-77.6, 43.2],
+        [-78.8784, 42.8864],
+        [-79.9, 42.1],
+        [-81.6944, 41.4993],
+        [-83.5379, 41.6528],
+        [-85.0, 41.7],
+        [-87.6298, 41.8781]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-crescent",
+    "name": "The Crescent",
+    "description": "One of the most storied trains in American history, the Crescent sweeps in a great arc from New York City to New Orleans. It passes through the nation's capital, winds through the green Shenandoah Valley of Virginia, crosses the misty Blue Ridge Mountains, stops in the banking city of Charlotte, rolls into the peach-tree city of Atlanta, pauses in the iron-and-steel city of Birmingham, and at last arrives in the jazz capital of the world. The whole South unfolds outside the window like a storybook.",
+    "stationIds": ["new-york-ny", "washington-dc", "charlotte-nc", "atlanta-ga", "birmingham-al", "new-orleans-la"],
+    "lengthMiles": 1377,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-74.2, 40.7],
+        [-75.1652, 39.9526],
+        [-76.6122, 39.2904],
+        [-77.0369, 38.9072],
+        [-77.5, 38.3],
+        [-78.5, 37.5],
+        [-79.4, 37.3],
+        [-80.0, 36.1],
+        [-80.4, 35.6],
+        [-80.8431, 35.2271],
+        [-82.3, 34.8],
+        [-83.3, 34.1],
+        [-84.3880, 33.7490],
+        [-85.5, 33.5],
+        [-86.8025, 33.5207],
+        [-87.8, 33.1],
+        [-88.7, 32.4],
+        [-89.3, 31.3],
+        [-90.0715, 29.9511]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-texas-eagle",
+    "name": "Texas Eagle",
+    "description": "The Texas Eagle is the train that connects the Midwest to the Lone Star State. It departs Chicago and rolls south through the rich farmland of Illinois, crosses the mighty Mississippi into St. Louis (you can see the Gateway Arch from the train!), winds through the Ozark hills of Arkansas, enters the piney woods of east Texas, stops at big Dallas, and ends up in old San Antonio where the River Walk sparkles and the Alamo stands proud. It is a long ride, but there is always something new to see.",
+    "stationIds": ["chicago-il", "st-louis-mo", "little-rock-ar", "dallas-tx", "san-antonio-tx"],
+    "lengthMiles": 1306,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-87.6298, 41.8781],
+        [-88.5, 41.0],
+        [-89.2, 40.5],
+        [-89.6, 39.8],
+        [-90.1994, 38.6270],
+        [-91.0, 37.5],
+        [-92.2896, 34.7465],
+        [-93.5, 33.5],
+        [-95.0, 33.0],
+        [-96.7970, 32.7767],
+        [-97.1, 31.5],
+        [-97.5, 30.6],
+        [-98.4936, 29.4241]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-capitol-limited",
+    "name": "Capitol Limited",
+    "description": "From the marble halls of Washington to the steel-and-glass canyons of Chicago, the Capitol Limited is the overnight express through the heart of the industrial Midwest. It climbs through the Allegheny Mountains of West Virginia and Maryland, rolls through the steel city of Pittsburgh at dusk, follows the Lake Erie shore through Cleveland and Toledo, and pulls into Chicago Union Station just in time for breakfast. Passengers fall asleep in one world and wake up in another.",
+    "stationIds": ["washington-dc", "pittsburgh-pa", "cleveland-oh", "toledo-oh", "chicago-il"],
+    "lengthMiles": 780,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-77.0369, 38.9072],
+        [-77.8, 39.5],
+        [-78.5, 39.6],
+        [-79.9959, 40.4406],
+        [-80.8, 40.8],
+        [-81.6944, 41.4993],
+        [-83.5379, 41.6528],
+        [-85.0, 41.7],
+        [-87.6298, 41.8781]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-auto-train",
+    "name": "Auto Train",
+    "description": "The only train in America where you can bring your car along for the ride! Families drive to the station at Lorton, Virginia -- just south of Washington -- load their automobiles onto special carrier cars, then climb aboard and settle into their seats. Overnight the train rolls south through the Carolinas, past the Georgia pines, and into sunny Florida. When they wake up in Sanford, their car is waiting, and the beach is just a short drive away. It is like magic.",
+    "stationIds": ["lorton-va", "sanford-fl"],
+    "lengthMiles": 855,
+    "primaryCargoTypes": ["passengers", "automobiles"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-77.2277, 38.7048],
+        [-77.4, 37.5],
+        [-78.6, 35.8],
+        [-79.5, 34.0],
+        [-80.3, 32.9],
+        [-81.1, 32.1],
+        [-81.5, 30.3],
+        [-81.2714, 28.8003]
+      ]
+    }
+  },
+  {
+    "id": "amtrak-cardinal",
+    "name": "The Cardinal",
+    "description": "The Cardinal takes the scenic route from New York to Chicago -- through the wild and beautiful mountains of West Virginia. After leaving Washington, the train climbs into the Allegheny highlands, winds through the New River Gorge (one of the deepest canyons east of the Mississippi), stops at Charleston in the Kanawha Valley, and descends into the bluegrass country of Kentucky and Ohio. It crosses the Ohio River at Cincinnati, then heads northwest across Indiana to Chicago. The mountain scenery is some of the finest on any passenger train in America.",
+    "stationIds": ["new-york-ny", "washington-dc", "charleston-wv", "cincinnati-oh", "chicago-il"],
+    "lengthMiles": 1147,
+    "primaryCargoTypes": ["passengers"],
+    "color": "#1A5DAD",
+    "operator": "Amtrak",
+    "type": "passenger",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [-73.9857, 40.7484],
+        [-74.2, 40.7],
+        [-75.1652, 39.9526],
+        [-76.6122, 39.2904],
+        [-77.0369, 38.9072],
+        [-78.5, 38.0],
+        [-79.5, 37.8],
+        [-80.5, 38.0],
+        [-81.6326, 38.3498],
+        [-82.5, 38.5],
+        [-84.5120, 39.1031],
+        [-85.5, 39.5],
+        [-87.6298, 41.8781]
       ]
     }
   }

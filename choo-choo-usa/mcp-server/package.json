@@ -1,0 +1,22 @@
+{
+  "name": "choo-choo-usa-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Choo-Choo USA train simulation",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "ws": "^8.16.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0"
+  }
+}
